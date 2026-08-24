@@ -470,7 +470,7 @@ p { color: var(--color-text-muted); }
 /* ==========================================================================
    Gallery
    ========================================================================== */
-.gallery-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(2, 1fr); }
+.gallery-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(2, 1fr); grid-auto-flow: dense; }
 @media (min-width: 700px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
 .gallery-item {
   position: relative;
