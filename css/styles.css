@@ -346,6 +346,10 @@ p { color: var(--color-text-muted); }
   margin-bottom: var(--space-6);
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.55));
 }
+@media (max-width: 640px) {
+  .hero-logo { width: min(78vw, 300px); margin-bottom: var(--space-5); }
+  .hero { min-height: auto; padding-block: var(--space-12) var(--space-10); }
+}
 .hero-inner .eyebrow { justify-content: center; }
 .hero-inner h1 {
   margin-block: var(--space-4) var(--space-5);
