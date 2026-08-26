@@ -30,3 +30,4 @@ No build step needed — just open `index.html` directly in a browser, or serve 
 ```bash
 python -m http.server 8000
 ```
+
