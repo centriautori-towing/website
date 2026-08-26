@@ -340,17 +340,12 @@ p { color: var(--color-text-muted); }
 }
 .hero .container { position: relative; z-index: 2; width: 100%; }
 .hero-inner { max-width: 760px; margin-inline: auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
-.hero-wordmark {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: clamp(3.2rem, 12vw, 7rem);
-  color: var(--color-text);
+.hero-logo {
+  width: min(90vw, 520px);
+  height: auto;
   margin-bottom: var(--space-6);
-  line-height: 1;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.55));
 }
-.hero-wordmark span { color: var(--gold); }
 .hero-inner .eyebrow { justify-content: center; }
 .hero-inner h1 {
   margin-block: var(--space-4) var(--space-5);
