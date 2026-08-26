@@ -298,7 +298,7 @@ p { color: var(--color-text-muted); }
   padding-block: 0.6rem;
 }
 .brand { display: flex; align-items: center; gap: 0.75rem; flex: none; min-width: 0; }
-.brand img { height: 68px; width: auto; flex: none; }
+.brand img { height: 78px; width: auto; flex: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .brand-text strong {
   font-family: var(--font-heading);
@@ -597,7 +597,7 @@ p { color: var(--color-text-muted); }
 .site-footer { background: var(--navy-950); border-top: 1px solid var(--color-border); padding-block: var(--space-8) var(--space-6); }
 .footer-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-5); padding-bottom: var(--space-6); }
 .footer-brand { display: flex; align-items: center; gap: 0.6rem; }
-.footer-brand img { height: 40px; }
+.footer-brand img { height: 50px; }
 .footer-brand strong { font-family: var(--font-heading); color: var(--color-text); font-size: 0.95rem; text-transform: uppercase; }
 .footer-bottom {
   border-top: 1px solid var(--color-border);
