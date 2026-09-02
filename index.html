@@ -1,434 +1,1448 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Centri Auto Towing & Mechanical | 24/7 Roadside Assistance in Rhode Island</title>
-<meta name="description" content="Call now for 24/7 towing and roadside assistance in West Warwick & South County, Rhode Island. AAA-affiliated. Flatbed towing, battery service, tire changes. (401) 420-9069.">
-<link rel="icon" href="assets/images/logo.png?v=8" type="image/png">
-<link rel="preload" as="image" href="assets/images/hero-truck.webp" fetchpriority="high">
-<link rel="stylesheet" href="css/styles.css?v=8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Centri Auto Towing &amp; Mechanical | 24/7 Towing and Roadside, Rhode Island</title>
+<meta name="description" content="24 hour towing and roadside assistance across South County and Kent County, Rhode Island. Flatbed towing, jump starts, lockouts, flat tires, fuel delivery. AAA partner. Call 401-420-9069.">
+<meta name="theme-color" content="#0A0F16">
+<meta name="format-detection" content="telephone=yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0F16'/%3E%3Cpath d='M22 16a10 10 0 0 0 0 20c6 0 8-4 8-8' fill='none' stroke='%23F6B723' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='40' cy='42' r='4' fill='%23F6B723'/%3E%3Ccircle cx='50' cy='46' r='4' fill='%23F6B723'/%3E%3C/svg%3E">
+
+<link rel="canonical" href="https://centriauto.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Centri Auto Towing &amp; Mechanical">
+<meta property="og:title" content="Centri Auto Towing &amp; Mechanical">
+<meta property="og:description" content="24/7 towing and roadside assistance across South County and Kent County, Rhode Island. AAA partner. Call 401-420-9069.">
+<meta property="og:url" content="https://centriauto.com/">
+<meta property="og:image" content="https://centriauto.com/assets/hero-static.jpg">
+<meta property="og:image:width" content="1500">
+<meta property="og:image:height" content="844">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@800;900&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CENTRI AUTO  ·  tokens
+   Palette sampled from the approved hero footage:
+   night sky #3B6190, beacon amber #D9984D, treeline #0C0B0A
+   ============================================================ */
+:root{
+  --canvas:#0A0F16;
+  --panel:#121C2A;
+  --panel-2:#16212F;
+  --accent:#F6B723;
+  --accent-hover:#FFCF56;
+  --accent-muted:rgba(246,183,35,.20);
+  --steel:#3B6190;
+  --steel-bright:#4C7AB4;
+  --warn:#E5714A;          /* the hazard red from the footage, kept away from the gold */
+  --text-primary:#EDF2F8;
+  --text-secondary:#93A3BC;
+  --line:rgba(147,163,188,.16);
+  --tshadow:0 1px 2px rgba(5,5,10,.95),0 3px 12px rgba(5,5,10,.78),0 10px 44px rgba(5,5,10,.8);
+  --e1:cubic-bezier(.22,.61,.36,1);
+  --e2:cubic-bezier(.65,0,.35,1);
+  --display:'Overpass',system-ui,-apple-system,sans-serif;
+  --body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --pad:clamp(20px,5vw,64px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden;overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--canvas);color:var(--text-primary);
+  font-family:var(--body);font-size:clamp(16px,1.05vw,18px);line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spacing:-.022em;margin:0}
+p{margin:0}
+button{font:inherit;color:inherit}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;top:-100px;left:16px;z-index:200;background:var(--accent);color:#0A0F16;padding:12px 18px;border-radius:10px;font-weight:500;transition:top .25s var(--e1)}
+.skip:focus{top:16px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- the fixed environment layer (one place, not stacked sections) ---------- */
+.env{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(1100px 720px at 78% 8%,rgba(59,97,144,.20),transparent 62%),
+  radial-gradient(820px 560px at 12% 78%,rgba(246,183,35,.055),transparent 66%),
+  linear-gradient(180deg,#0A0F16 0%,#0B1219 55%,#090D13 100%);
+  animation:envdrift 74s var(--e1) -12s infinite alternate}
+@keyframes envdrift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-2.2%,1.4%,0) scale(1.05)}}
+.grain{position:fixed;inset:-50%;z-index:1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grainshift 8s steps(6) -2s infinite}
+@keyframes grainshift{0%{transform:translate(0,0)}100%{transform:translate(-6%,4%)}}
+.rain{position:fixed;inset:-20% -10%;z-index:1;pointer-events:none;opacity:.055;
+  background:repeating-linear-gradient(101deg,transparent 0 26px,rgba(210,228,255,.85) 26px 27px,transparent 27px 62px);
+  animation:raindrift 24s linear -6s infinite}
+@keyframes raindrift{from{transform:translate3d(0,-14%,0)}to{transform:translate3d(-8%,14%,0)}}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;gap:16px;
+  padding:14px var(--pad);transition:background .4s var(--e1),backdrop-filter .4s var(--e1),border-color .4s var(--e1);
+  border-bottom:1px solid transparent}
+.nav.solid{background:rgba(9,13,19,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav .mark{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;min-width:0}
+.nav .mark img{width:clamp(132px,15vw,182px);height:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6))}
+.nav .hours{font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-secondary);white-space:nowrap}
+.nav .hours b{color:var(--accent);font-weight:500}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
+  font-family:var(--mono);font-weight:500;font-size:15px;letter-spacing:.02em;
+  padding:13px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:transform .3s var(--e1),background .3s var(--e1),border-color .3s var(--e1),box-shadow .3s var(--e1)}
+.btn-primary{background:var(--accent);color:#0A0F16;box-shadow:0 6px 26px rgba(246,183,35,.24)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 10px 34px rgba(246,183,35,.34)}
+.btn-ghost{border-color:var(--steel-bright);color:var(--text-primary);background:rgba(18,28,42,.5)}
+.btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+.btn svg{width:16px;height:16px;flex:none}
+@media (pointer:coarse){.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+/* small screens: the nav keeps a call button, but a compact one. the big one lives at the bottom. */
+@media (max-width:860px){.nav{padding:12px clamp(14px,4vw,24px);gap:12px}.nav .hours{display:none}}
+@media (max-width:560px){
+  .nav .mark img{width:118px}
+  .nav .btn{padding:11px 14px;min-width:44px}
+  .nav .btn .lbl{display:none}
+  .nav .btn svg{width:18px;height:18px}
+}
+@media (max-width:720px){.static-hero{padding-bottom:104px}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;z-index:2;height:560vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#070A0F}
+.poster,#hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.poster{background-size:cover;background-position:50% 58%;transition:opacity .7s var(--e1)}
+#hero-video{opacity:0;transition:opacity .8s var(--e1);will-change:transform;transform:translateZ(0)}
+.stage.video-ready #hero-video{opacity:1}
+.stage.video-ready .poster{opacity:0}
+.stage.video-failed #hero-video{display:none}
+.scrim{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 120% 90% at 62% 45%,rgba(10,10,18,0) 32%,rgba(10,10,18,.64) 100%)}
+.vign{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(6,9,14,.72) 0%,rgba(6,9,14,0) 22%,rgba(6,9,14,0) 62%,rgba(6,9,14,.78) 100%)}
+
+/* loading ring */
+.ring{position:absolute;right:clamp(18px,3vw,40px);bottom:clamp(18px,3vw,40px);width:46px;height:46px;
+  color:var(--accent);opacity:.9;transform:rotate(-90deg);transition:opacity .5s var(--e1)}
+.stage.video-ready .ring{opacity:0}
+.ring circle{transition:stroke-dashoffset .18s linear}
+.chev{position:absolute;right:clamp(18px,3vw,40px);bottom:clamp(18px,3vw,40px);width:46px;height:46px;color:var(--accent);opacity:.8}
+
+/* caption bands */
+.bands{position:absolute;inset:0;z-index:3}
+.band{position:absolute;top:0;left:0;width:min(56%,760px);height:100%;
+  display:flex;flex-direction:column;justify-content:center;gap:22px;
+  padding-left:var(--pad);padding-right:24px;opacity:0;text-shadow:var(--tshadow)}
+.band::before{content:"";position:absolute;inset:-6% -14% -6% -30%;pointer-events:none;z-index:-1;
+  opacity:calc(.25 + .75*var(--k,1));
+  background:radial-gradient(ellipse 80% 66% at 42% 50%,rgba(5,5,10,.70) 0%,rgba(5,5,10,.46) 46%,rgba(5,5,10,0) 76%)}
+/* band 2 sits exactly where the headlight bloom spills into the text column, so its scrim
+   runs deeper and wider than the others. Measured, not guessed: 3.32:1 before, audited after. */
+.band2::before{background:radial-gradient(ellipse 94% 78% at 40% 50%,rgba(5,5,10,.84) 0%,rgba(5,5,10,.64) 52%,rgba(5,5,10,0) 86%)}
+.band .btn{text-shadow:none}
+.band h2,.band h1{font-size:clamp(2.05rem,4.85vw,4.15rem);max-width:15ch}
+.band4 h1{max-width:10ch}
+.band .sub{font-size:clamp(1rem,1.35vw,1.2rem);color:#D7E1EE;max-width:34ch}
+.chip{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+  font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#CFDCEC;
+  background:rgba(8,8,15,.55);border:1px solid rgba(96,96,126,.34);border-radius:10px;padding:7px 13px;
+  backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(5,5,10,.85)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);font-style:normal}
+
+/* word / char split scaffolding */
+.vis{display:block}
+.w{display:inline-block;white-space:pre}
+.c{display:inline-block;will-change:transform,opacity}
+
+/* (a) drift-down : words fall into place, echoing the rain */
+[data-fx="drift"] .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc)) * -26px))}
+/* (b) blur-to-sharp : the distant light resolving */
+[data-fx="blur"]{position:relative}
+[data-fx="blur"] .soft{position:absolute;inset:0;filter:blur(11px);opacity:calc(1 - var(--k,0));color:#C9D9EC}
+[data-fx="blur"] .sharp{opacity:var(--k,0)}
+/* (c) word punch with overshoot : the beacon landing */
+[data-fx="punch"] .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);
+  --ks:clamp(0,(var(--k,0) - var(--th,0) - var(--sd,.1))*var(--ss,3.2),1);
+  opacity:var(--kc);
+  transform:scale(calc(0.62 + (0.38 + var(--ov,.12))*var(--kc) - var(--ov,.12)*var(--ks)))}
+[data-fx="punch"] .w.em{--ov:.24;--sd:.16;--ss:2.6;color:var(--accent)}
+/* (d) word-by-word rise into a staged settle */
+[data-fx="rise"] .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc)) * 30px))}
+.band4 .sub{--ks:clamp(0,(var(--k,0) - .60)*4,1);opacity:var(--ks);
+  transform:translateY(calc((1 - var(--ks)) * 18px))}
+.band4 .row{--kb:clamp(0,(var(--k,0) - .76)*5,1);opacity:var(--kb);
+  transform:translateY(calc((1 - var(--kb)) * 16px));display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* the static hero (phones, portrait tablets, reduced motion) */
+.static-hero{display:none;position:relative;z-index:4;flex-direction:column;justify-content:flex-end;
+  min-height:100svh;padding:120px var(--pad) clamp(40px,9vh,72px);gap:20px}
+.static-hero h1{font-size:clamp(2.35rem,9vw,3.6rem);max-width:13ch;text-shadow:var(--tshadow)}
+.static-hero .sub{color:#DCE5F0;max-width:32ch;text-shadow:var(--tshadow)}
+.static-hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.static-hero .fine{font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#A9B8CC;text-shadow:var(--tshadow)}
+
+/* ============================================================
+   below the fold
+   ============================================================ */
+.wrap{position:relative;z-index:2;background:linear-gradient(180deg,rgba(10,15,22,.94),rgba(10,15,22,.66) 10%,rgba(10,15,22,.42) 38%,rgba(10,15,22,.58) 100%)}
+section.blk{position:relative;padding:clamp(78px,11vh,140px) var(--pad);max-width:1320px;margin-inline:auto}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--accent);opacity:.75}
+h2.big{font-size:clamp(1.95rem,3.9vw,3.15rem);max-width:17ch}
+h3{font-size:clamp(1.15rem,1.6vw,1.4rem);font-weight:800}
+.lede{color:var(--text-secondary);max-width:52ch;margin-top:18px;font-size:clamp(1rem,1.15vw,1.1rem)}
+.nw{white-space:nowrap}
+a.nw{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-muted);transition:border-color .3s var(--e1)}
+a.nw:hover{border-bottom-color:var(--accent)}
+
+/* the signature element: a beacon sweep across every divider */
+.sweep{position:relative;height:1px;background:var(--line);overflow:visible;max-width:1320px;margin-inline:auto}
+.sweep::after{content:"";position:absolute;top:-1px;left:0;width:26%;height:3px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,rgba(246,183,35,.12) 18%,var(--accent) 50%,rgba(246,183,35,.12) 82%,transparent);
+  box-shadow:0 0 26px rgba(246,183,35,.5);opacity:.9}
+.sweep.live::after{animation:beacon 6s var(--e2) -2s infinite}
+@keyframes beacon{0%{transform:translateX(-30%)}50%{transform:translateX(400%)}100%{transform:translateX(-30%)}}
+
+/* one living element per section, whisper level, and only while it is on screen */
+.promise.live .lbl{animation:emberglow 9s var(--e2) -3s infinite alternate}
+@keyframes emberglow{from{text-shadow:0 0 0 rgba(246,183,35,0)}to{text-shadow:0 0 26px rgba(246,183,35,.42)}}
+.svc .shot::before{content:"";position:absolute;inset:-20%;z-index:1;pointer-events:none;opacity:0;
+  background:radial-gradient(45% 55% at 30% 60%,rgba(246,183,35,.30),transparent 70%)}
+#services.live .shot::before{animation:lampdrift 16s var(--e2) -4s infinite alternate}
+@keyframes lampdrift{from{opacity:.10;transform:translateX(-14%)}to{opacity:.26;transform:translateX(16%)}}
+#work.live figcaption{animation:capglow 10s var(--e2) -2s infinite alternate}
+@keyframes capglow{from{border-color:rgba(120,140,170,.26)}to{border-color:rgba(246,183,35,.42)}}
+#cost.live .aaa .t{animation:emberglow 7s var(--e2) -1s infinite alternate}
+#faq.live .n{animation:emberglow 8s var(--e2) infinite alternate}
+#faq.live .q:nth-child(2) .n{animation-delay:-1.6s}
+#faq.live .q:nth-child(3) .n{animation-delay:-3.2s}
+#faq.live .q:nth-child(4) .n{animation-delay:-4.8s}
+#faq.live .q:nth-child(5) .n{animation-delay:-6.4s}
+#contact.live .bg{animation:closedrift 46s var(--e2) -10s infinite alternate}
+@keyframes closedrift{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.06) translate3d(-1.4%,-1%,0)}}
+.chain svg path{stroke-dasharray:1600;stroke-dashoffset:1600;transition:stroke-dashoffset 2.1s var(--e1)}
+.chain.live svg path{stroke-dashoffset:0}
+.chain.live svg path:last-child{transition-delay:.35s}
+
+/* the route rail down the left edge */
+.rail{position:fixed;left:26px;top:0;height:100vh;width:34px;z-index:5;pointer-events:none}
+.rail svg{height:100%;width:100%}
+.rail .track{stroke:var(--line);stroke-width:2;fill:none}
+.rail .draw{stroke:var(--accent);stroke-width:2;fill:none;filter:drop-shadow(0 0 6px rgba(246,183,35,.55))}
+@media (max-width:1280px),(max-height:640px){.rail{display:none}}
+
+/* promise strip */
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border-block:1px solid var(--line);max-width:1320px;margin-inline:auto}
+.promise .cell{background:var(--canvas);padding:clamp(26px,3.6vw,44px) clamp(20px,2.6vw,36px)}
+.promise .lbl{font-family:var(--mono);font-size:26px;font-weight:500;color:var(--accent);letter-spacing:-.01em}
+.promise p{margin-top:12px;color:var(--text-secondary);font-size:1rem;max-width:26ch}
+@media (max-width:840px){.promise{grid-template-columns:1fr}}
+
+/* services : two panels, deliberately unequal so the grid never reads as a template */
+.svc{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,2.4vw,32px);margin-top:clamp(34px,5vw,58px)}
+.svc .card{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel);
+  transition:border-color .45s var(--e1),transform .45s var(--e1)}
+.svc .card:hover{border-color:var(--steel-bright);transform:translateY(-4px)}
+.svc .shot{position:relative;height:clamp(220px,25vw,330px);overflow:hidden}
+.svc .shot img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.1s var(--e1)}
+.svc .card:hover .shot img{transform:scale(1.06)}
+.svc .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,15,22,0) 40%,rgba(10,15,22,.92))}
+.svc .body{padding:clamp(22px,2.6vw,34px)}
+.svc p{color:var(--text-secondary);margin-top:12px}
+.svc ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:#B9C7DA;
+  border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--panel-2)}
+@media (max-width:900px){.svc{grid-template-columns:1fr}}
+
+/* coverage : the interactive moment. deliberately a different skeleton to its neighbours:
+   the head is a two column baseline row and the choices sit up in it, not under a kicker */
+.covhead{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,3.4vw,56px);align-items:baseline;
+  padding-bottom:clamp(26px,3.4vw,44px);border-bottom:1px solid var(--line)}
+.covhead h2{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+.covhead .lede{margin-top:0}
+@media (max-width:900px){.covhead{grid-template-columns:1fr}}
+.cov{display:grid;grid-template-columns:1fr .82fr;gap:clamp(24px,3.6vw,52px);align-items:start;margin-top:clamp(30px,4vw,46px)}
+.map{position:relative;border:1px solid var(--line);border-radius:20px;background:
+  radial-gradient(700px 480px at 62% 22%,rgba(59,97,144,.16),transparent 70%),var(--panel);overflow:hidden}
+.map svg{display:block;width:100%;height:auto}
+.map .water{fill:rgba(59,97,144,.22)}
+.map .land{fill:rgba(22,33,47,.9);stroke:rgba(147,163,188,.14);stroke-width:2}
+.map .road{stroke:rgba(147,163,188,.16);stroke-width:2;fill:none}
+.map .dot{fill:#54708F;transition:fill .35s var(--e1)}
+.map .dot.on{fill:var(--accent)}
+.map .shop{fill:var(--accent)}
+.map .halo{fill:none;stroke:var(--accent);stroke-width:2;opacity:0;transform-origin:654px 93px}
+#coverage.live .halo{animation:halo 3.4s var(--e2) -1.1s infinite}
+@keyframes halo{0%{transform:scale(.55);opacity:.75}70%{transform:scale(2.3);opacity:0}100%{transform:scale(2.3);opacity:0}}
+.map .route{stroke:var(--accent);stroke-width:4;fill:none;stroke-linecap:round;
+  filter:drop-shadow(0 0 10px rgba(246,183,35,.6));transition:stroke-dashoffset 1.15s var(--e1)}
+.map .tag{font-family:var(--mono);font-size:20px;fill:#8FA1B8}
+.map .tag.on{fill:var(--accent)}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.town{font-family:var(--mono);font-size:13px;letter-spacing:.03em;color:#BCC9DA;background:var(--panel-2);
+  border:1px solid var(--line);border-radius:999px;padding:9px 15px;cursor:pointer;
+  transition:border-color .3s var(--e1),color .3s var(--e1),background .3s var(--e1),transform .3s var(--e1)}
+.town:hover{border-color:var(--steel-bright);transform:translateY(-2px)}
+.town[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#0A0F16}
+@media (pointer:coarse){.town{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+.readout{border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:clamp(24px,3vw,36px);position:sticky;top:96px}
+.readout .to{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.readout .name{font-family:var(--display);font-weight:900;font-size:clamp(1.6rem,2.6vw,2.3rem);margin-top:6px}
+.readout .eta{font-family:var(--mono);font-size:clamp(1.5rem,2.4vw,2rem);color:var(--accent);margin-top:18px;font-weight:500}
+.readout .etalbl{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin-top:4px}
+.readout .note{color:var(--text-secondary);font-size:.92rem;margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
+.readout .btn{margin-top:22px;width:100%}
+@media (max-width:960px){.cov{grid-template-columns:1fr}.readout{position:static}}
+
+/* about and the fleet. the fleet is a swipeable filmstrip on purpose, so it shares
+   no skeleton with the job gallery that follows it */
+.abouthead{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(22px,4vw,64px);align-items:end}
+@media (max-width:900px){.abouthead{grid-template-columns:1fr}}
+.abouthead p{color:var(--text-secondary);max-width:52ch}
+.abouthead p + p{margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:clamp(30px,4vw,48px)}
+.stats .s{background:var(--panel);padding:clamp(22px,2.8vw,34px)}
+.stats .n{font-family:var(--display);font-weight:900;font-size:clamp(2rem,3.6vw,3rem);color:var(--accent);line-height:1}
+.stats .l{margin-top:11px;color:var(--text-secondary);font-size:.95rem;max-width:26ch}
+@media (max-width:760px){.stats{grid-template-columns:1fr}}
+.fleetstrip{display:flex;gap:clamp(12px,1.4vw,18px);overflow-x:auto;scroll-snap-type:x mandatory;
+  margin-top:clamp(26px,3.4vw,42px);padding-bottom:16px;
+  scrollbar-width:thin;scrollbar-color:var(--steel) transparent}
+.fleetstrip::-webkit-scrollbar{height:8px}
+.fleetstrip::-webkit-scrollbar-track{background:rgba(147,163,188,.10);border-radius:99px}
+.fleetstrip::-webkit-scrollbar-thumb{background:var(--steel);border-radius:99px}
+.fleetstrip:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius:8px}
+/* fixed height, natural width: every truck shows whole instead of being cropped to a box */
+.fleetstrip figure{margin:0;flex:0 0 auto;height:clamp(190px,26vw,300px);scroll-snap-align:start;
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}
+.fleetstrip img{height:100%;width:auto;max-width:none;display:block;object-fit:cover;
+  transition:transform 1.1s var(--e1)}
+.fleetstrip figure:hover img{transform:scale(1.05)}
+.striphint{display:flex;align-items:center;gap:10px;margin-top:6px;font-family:var(--mono);
+  font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary)}
+.striphint span{width:26px;height:1px;background:var(--accent);opacity:.7}
+
+/* real work gallery: an even wall of real jobs */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:clamp(10px,1.3vw,16px);margin-top:clamp(30px,4vw,48px)}
+.gal figure{margin:0;position:relative;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);background:var(--panel);aspect-ratio:4/3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--e1)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal.clip figure:nth-child(n+9){display:none}
+.galmore{display:flex;margin:clamp(16px,2vw,24px) auto 0}
+
+/* customer reviews. centred head and a masonry flow, so it shares no skeleton with its neighbours */
+#reviews .revhead{text-align:center;max-width:60ch;margin-inline:auto}
+#reviews .revhead .kicker{justify-content:center}
+#reviews .revhead h2{margin-inline:auto}
+#reviews .revhead .lede{margin-inline:auto}
+.revwrap{columns:3;column-gap:clamp(14px,1.8vw,22px);margin-top:clamp(32px,4.4vw,52px)}
+@media (max-width:1040px){.revwrap{columns:2}}
+@media (max-width:640px){.revwrap{columns:1}}
+.revwrap.clip .rev:nth-child(n+7){display:none}
+.rev{break-inside:avoid;margin:0 0 clamp(14px,1.8vw,22px);background:var(--panel);
+  border:1px solid var(--line);border-radius:18px;padding:clamp(20px,2.2vw,28px);
+  transition:border-color .45s var(--e1),transform .45s var(--e1)}
+.rev:hover{border-color:var(--steel-bright);transform:translateY(-3px)}
+.rev .stars{display:flex;gap:4px;margin-bottom:15px;color:var(--accent)}
+.rev .stars svg{width:15px;height:15px;flex:none}
+.rev p{font-style:italic;color:#DBE4F0;font-size:.97rem;line-height:1.72;margin:0}
+.rev cite{display:block;margin-top:15px;font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--accent);font-style:normal}
+#reviews.live .rev .stars{animation:starglow 9s var(--e2) infinite alternate}
+#reviews.live .rev:nth-child(even) .stars{animation-delay:-4.5s}
+@keyframes starglow{from{filter:drop-shadow(0 0 0 rgba(246,183,35,0))}to{filter:drop-shadow(0 0 7px rgba(246,183,35,.55))}}
+.revmore{display:flex;margin:clamp(8px,1.6vw,18px) auto 0}
+
+/* chain divider, drawn by hand */
+.chain{max-width:1320px;margin:0 auto;padding:0 var(--pad);opacity:.85}
+.chain svg{width:100%;height:34px;display:block}
+.chain .lnk{fill:none;stroke:var(--accent);stroke-width:3;opacity:.5}
+
+/* cost */
+.cost{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.4vw,52px);align-items:center}
+.cost .box{border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:clamp(26px,3.2vw,40px)}
+.cost .box p{color:var(--text-secondary);margin-top:14px}
+.cost .aaa{display:flex;align-items:baseline;gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.cost .aaa .t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.cost .aaa .d{color:var(--text-secondary);font-size:.95rem}
+@media (max-width:900px){.cost{grid-template-columns:1fr}}
+
+/* faq: a sticky head beside the list, so it does not repeat the stacked skeleton above it */
+.faqwrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,4vw,72px);align-items:start}
+.faqhead{position:sticky;top:112px}
+.faqhead .lede{max-width:30ch}
+@media (max-width:900px){.faqwrap{grid-template-columns:1fr}.faqhead{position:static}}
+.faq{margin-top:-14px}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;display:flex;align-items:baseline;gap:16px;text-align:left;background:none;border:0;cursor:pointer;
+  padding:clamp(20px,2.4vw,28px) 0;font-family:var(--display);font-weight:800;font-size:clamp(1.05rem,1.5vw,1.28rem);
+  transition:color .3s var(--e1)}
+.q button:hover{color:var(--accent)}
+.q .n{font-family:var(--mono);font-size:12px;color:var(--accent);flex:none;font-weight:500;padding-top:4px}
+.q .pm{margin-left:auto;flex:none;width:14px;height:14px;position:relative;align-self:center}
+.q .pm::before,.q .pm::after{content:"";position:absolute;inset:0;margin:auto;background:var(--accent);transition:transform .4s var(--e1)}
+.q .pm::before{width:14px;height:2px}
+.q .pm::after{width:2px;height:14px}
+.q[data-open="true"] .pm::after{transform:scaleY(0)}
+.q .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--e1)}
+.q[data-open="true"] .ans{grid-template-rows:1fr}
+.q .ans>div{overflow:hidden}
+.q .ans p{color:var(--text-secondary);padding-bottom:clamp(20px,2.4vw,28px);max-width:62ch}
+
+/* last call */
+.last{position:relative;overflow:hidden;border-top:1px solid var(--line)}
+.last .bg{position:absolute;inset:0;background-image:url('assets/cta-band.jpg');background-size:cover;background-position:50% 62%;opacity:.5}
+.last .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,18,.96) 12%,rgba(8,12,18,.72) 52%,rgba(8,12,18,.5))}
+.last .inner{position:relative;max-width:1320px;margin-inline:auto;padding:clamp(80px,12vh,150px) var(--pad);
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:start}
+.last h2{font-size:clamp(2.1rem,4.6vw,3.6rem);max-width:12ch;text-shadow:var(--tshadow)}
+.last .sub{color:#D5DFEC;margin-top:18px;max-width:34ch;text-shadow:var(--tshadow)}
+.last .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.last .meta{margin:clamp(34px,4.4vw,56px) 0 0;display:grid;gap:22px;max-width:34ch}
+.last .meta>div{display:grid;grid-template-columns:9ch 1fr;gap:18px;align-items:baseline;
+  padding-top:16px;border-top:1px solid rgba(147,163,188,.22)}
+.last dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.last dd{margin:0;color:#CBD6E4;font-size:.95rem;line-height:1.65}
+.last dd a{text-decoration:none;border-bottom:1px solid var(--accent-muted)}
+.last dd a:hover{color:var(--accent)}
+@media (max-width:520px){.last .meta>div{grid-template-columns:1fr;gap:6px}}
+@media (max-width:920px){.last .inner{grid-template-columns:1fr}}
+
+/* form */
+form{background:rgba(12,18,27,.82);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,34px)}
+form .ttl{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+form p.hint{color:var(--text-secondary);font-size:.93rem;margin-top:10px}
+.fld{margin-top:18px}
+.fld label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:7px}
+.fld input,.fld textarea{width:100%;background:var(--canvas);border:1px solid var(--line);border-radius:12px;
+  color:var(--text-primary);font-family:var(--body);font-size:1rem;padding:13px 15px;
+  transition:border-color .3s var(--e1),background .3s var(--e1)}
+.fld input:hover,.fld textarea:hover{border-color:var(--steel-bright)}
+.fld input:focus,.fld textarea:focus{border-color:var(--accent);outline:none;background:#0C121B}
+.fld textarea{min-height:104px;resize:vertical}
+.fld input[aria-invalid="true"],.fld textarea[aria-invalid="true"]{border-color:var(--warn)}
+.formerr{display:none;margin-top:16px;color:var(--warn);font-size:.9rem;font-family:var(--mono);letter-spacing:.02em}
+form.invalid .formerr{display:block}
+form .btn{margin-top:22px;width:100%}
+.sent{display:none;margin-top:18px;border:1px solid var(--accent-muted);background:rgba(246,183,35,.07);
+  border-radius:12px;padding:16px;color:#E8EEF7;font-size:.95rem}
+form.done .sent{display:block}
+
+/* footer */
+footer{position:relative;z-index:2;border-top:1px solid var(--line);background:rgba(8,12,18,.72)}
+.fwrap{max-width:1320px;margin-inline:auto;padding:clamp(48px,6vw,72px) var(--pad) 28px;
+  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(24px,3vw,48px)}
+.fwrap img{width:190px;height:auto;margin-bottom:18px}
+.fwrap h4{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.fwrap p,.fwrap a{color:var(--text-secondary);font-size:.95rem;text-decoration:none;line-height:1.9}
+.fwrap a:hover{color:var(--accent)}
+.fbot{max-width:1320px;margin-inline:auto;padding:20px var(--pad) 40px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:#6F7F95;text-transform:uppercase}
+@media (max-width:860px){.fwrap{grid-template-columns:1fr}}
+
+/* the sticky call button for small screens */
+.fab{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;display:none;justify-content:center;
+  box-shadow:0 12px 40px rgba(0,0,0,.55)}
+@media (max-width:720px){.fab{display:inline-flex}footer{padding-bottom:74px}}
+
+/* entrance choreography */
+[data-anim] .part{opacity:0;transform:translateY(26px);
+  transition:opacity .85s var(--e1),transform .85s var(--e1)}
+[data-anim].in .part{opacity:1;transform:none}
+
+/* ============================================================
+   THE FIVE STATIC-HERO GATES  (identical strings in the JS)
+   ============================================================ */
+@media (max-width:720px),
+       (orientation:portrait) and (max-width:1024px),
+       (orientation:portrait) and (pointer:coarse),
+       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
+       (prefers-reduced-motion:reduce){
+  .hero{height:auto}
+  .stage{position:relative;height:auto;min-height:100svh;
+    background-image:linear-gradient(180deg,rgba(8,12,18,.35),rgba(8,12,18,.86)),url('assets/hero-static.jpg');
+    background-size:cover;background-position:58% 50%}
+  .bands,#hero-video,.ring,.chev,.poster{display:none}
+  .static-hero{display:flex}
+  .rail{display:none}
+}
+/* portrait screens get a still composed for portrait, so the logo on the door survives the crop.
+   Every clause here sits inside gates 1, 2 and 3 above, so this never fires without the static hero. */
+@media (max-width:720px) and (orientation:portrait),
+       (orientation:portrait) and (max-width:1024px),
+       (orientation:portrait) and (pointer:coarse){
+  .stage{background-image:linear-gradient(180deg,rgba(8,12,18,.28),rgba(8,12,18,.58) 44%,rgba(8,12,18,.93)),url('assets/hero-static-tall.jpg');
+    background-position:50% 28%}
+}
+/* short desktop windows: keep the scrub, drop the overlays with no room */
+@media (max-height:560px) and (pointer:fine){.ring,.chev{display:none}}
+
+/* reduced motion, honored completely */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition-duration:.01ms !important;transition-delay:0s !important}
+  [data-anim] .part{opacity:1 !important;transform:none !important}
+  .band .w,.band .c{opacity:1 !important;transform:none !important}
+  .map .route{transition:none !important}
+}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="env" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="rain" aria-hidden="true"></div>
 
-<!-- ============ SVG ICON SPRITE ============ -->
-<svg xmlns="http://www.w3.org/2000/svg" class="visually-hidden" aria-hidden="true">
-<defs>
-<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-<symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-<symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
-<symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
-<symbol id="i-tire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M21 12h-3M6 12H3M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7 5.6 5.6"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
-<symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2.5 15 9l7 .9-5.1 4.9L18.2 21 12 17.6 5.8 21l1.3-6.2L2 9.9 9 9z"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
-<symbol id="i-flatbed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h13V8H8l-3 5H2v4Z"/><path d="M15 11h4l3 3v3h-7"/><circle cx="6" cy="19.5" r="1.6"/><circle cx="18.5" cy="19.5" r="1.6"/></symbol>
-<symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></symbol>
-<symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8Z"/></symbol>
-<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
-<symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></symbol>
-<symbol id="i-fuel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M3 10h10"/><path d="M14 8.5l3 2v6a1.5 1.5 0 0 0 3 0V10a2 2 0 0 0-.59-1.42L17 6"/><path d="M2 22h13"/></symbol>
-</defs>
-</svg>
+<div class="rail" aria-hidden="true">
+  <svg viewBox="0 0 34 1000" preserveAspectRatio="none">
+    <path class="track" d="M17 0 L17 250 Q17 300 27 340 L27 620 Q27 680 17 720 L17 1000"/>
+    <path class="draw" id="railDraw" d="M17 0 L17 250 Q17 300 27 340 L27 620 Q27 680 17 720 L17 1000"/>
+  </svg>
+</div>
 
-<main id="main">
+<nav class="nav" id="nav">
+  <a class="mark" href="#main" aria-label="Centri Auto Towing and Mechanical, home">
+    <img src="assets/logo.png" alt="Centri Auto Towing &amp; Mechanical" width="440" height="243">
+  </a>
+  <span class="hours">Open <b>24/7</b></span>
+  <a class="btn btn-primary" href="tel:+14014209069" aria-label="Call Centri Auto on 401-420-9069">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    <span class="lbl">401-420-9069</span>
+  </a>
+</nav>
 
-<!-- ============ HERO — the whole point of the page ============ -->
-<section class="hero">
-  <div class="hero-media" aria-hidden="true">
-    <picture>
-      <source srcset="assets/images/hero-truck.webp" type="image/webp">
-      <img src="assets/images/hero-truck.jpg" alt="" fetchpriority="high" width="1024" height="768">
-    </picture>
-  </div>
-  <div class="container">
-    <div class="hero-inner">
-      <picture>
-        <source srcset="assets/images/logo.webp?v=8" type="image/webp">
-        <img src="assets/images/logo.png?v=8" alt="Centri Auto Towing & Mechanical" class="hero-logo" width="1200" height="663">
-      </picture>
-      <a class="call-btn call-btn-hero" href="tel:+14014209069" aria-label="Call now for roadside assistance: 401 420 9069">
-        <svg aria-hidden="true"><use href="#i-phone"/></svg>
-        <span class="hero-call-wrap">
-          <span class="hero-call-label">Call For Roadside Assistance</span>
-          <span class="hero-call-divider" aria-hidden="true"></span>
-          <span class="hero-call-number">(401) 420-9069</span>
-        </span>
-      </a>
+<main id="main" tabindex="-1">
 
-      <h1>24/7 Towing &amp; Roadside Assistance Across Rhode Island</h1>
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="hero">
+  <div class="stage" id="stage">
+    <div class="poster" id="poster" aria-hidden="true"></div>
+    <video id="hero-video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="vign" aria-hidden="true"></div>
 
-      <div class="hero-badges">
-        <span class="hero-badge"><svg aria-hidden="true"><use href="#i-clock"/></svg>Available 24/7</span>
-        <span class="hero-badge"><svg aria-hidden="true"><use href="#i-shield"/></svg>AAA-Affiliated</span>
-        <span class="hero-badge"><svg aria-hidden="true"><use href="#i-check"/></svg>Licensed &amp; Insured</span>
+    <svg class="ring" id="ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(246,183,35,.18)" stroke-width="3"/>
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/>
+    </svg>
+
+    <div class="bands" id="bands">
+      <div class="band band1" data-a="0" data-b="0.235" data-ramp="0.030" data-fx="drift" data-spread="0.42">
+        <span class="chip"><i></i>Rhode Island, 2:14 AM</span>
+        <h2 class="split">Dead car. Dark road. No idea what happens next.</h2>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT / TRUST ============ -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="about-layout">
-      <div class="about-photo">
-        <picture>
-          <source srcset="assets/images/job-7.webp" type="image/webp">
-          <img src="assets/images/job-7.jpg" alt="Centri Auto flatbed truck delivering a sedan in a Rhode Island driveway" loading="lazy" width="840" height="567">
-        </picture>
-        <span class="tag">Flatbed Delivery</span>
+      <div class="band band2" data-a="0.255" data-b="0.490" data-fx="blur">
+        <h2 class="split">The waiting is the worst part.</h2>
       </div>
-      <div>
-        <span class="eyebrow">Why Rhode Island Trusts Us</span>
-        <h2>Locally Owned, AAA-Trusted</h2>
-        <p>Centri Auto Towing &amp; Mechanical is built on 15 years in the automotive industry &mdash; including ownership of a full collision and mechanic shop &mdash; and 12+ years as an AAA-affiliated towing partner right here in Rhode Island. When you call, a dispatcher answers and a truck responds.</p>
-
-        <div class="aaa-callout">
-          <div class="icon-box"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
-          <div>
-            <strong>AAA-Affiliated Towing Partner</strong>
-            <p>12+ years as a trusted AAA roadside partner in Rhode Island.</p>
-          </div>
-        </div>
-
-        <div class="stat-highlight">
-          <strong>88%+</strong>
-          <span>Customer satisfaction, consistently, across our service surveys.</span>
-        </div>
-
-        <div class="badge-row">
-          <span class="badge"><svg aria-hidden="true"><use href="#i-clock"/></svg>24/7 Dispatch</span>
-          <span class="badge"><svg aria-hidden="true"><use href="#i-check"/></svg>Licensed &amp; Insured</span>
-          <span class="badge"><svg aria-hidden="true"><use href="#i-home"/></svg>Locally Owned</span>
+      <div class="band band3" data-a="0.510" data-b="0.745" data-fx="punch" data-spread="0.46" data-em="8">
+        <h2 class="split">We pick up. We tell you when. We come.</h2>
+      </div>
+      <div class="band band4" data-a="0.765" data-b="1" data-ramp="0.036" data-fx="rise" data-spread="0.38">
+        <h1 class="split">Centri Auto is on the way.</h1>
+        <p class="sub">24/7 towing and roadside across South County and Kent County, Rhode Island. AAA partner.</p>
+        <div class="row">
+          <a class="btn btn-primary" href="tel:+14014209069">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            Call 401-420-9069
+          </a>
+          <a class="btn btn-ghost" href="#coverage">Find your town</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ SERVICES (simple) ============ -->
-<section class="section alt" id="services">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">What We Do</span>
-      <h2>Towing &amp; Roadside Assistance</h2>
-      <p>Pricing depends on distance and vehicle &mdash; call and we'll give you a straight quote before we dispatch.</p>
-    </div>
-    <div class="grid grid-2">
-      <div class="service-card-lg">
-        <div class="icon-box"><svg aria-hidden="true"><use href="#i-flatbed"/></svg></div>
-        <h3>Towing</h3>
-        <p>Flatbed &amp; wrecker towing for light and medium-duty vehicles, handled safely from pickup to drop-off.</p>
-        <a class="btn btn-primary" href="tel:+14014209069"><svg aria-hidden="true"><use href="#i-phone"/></svg> Call For a Quote</a>
+    <div class="static-hero">
+      <span class="chip"><i></i>Open 24 hours, every day</span>
+      <h1>We're already moving.</h1>
+      <p class="sub">24/7 towing and roadside assistance across South County and Kent County, Rhode Island. AAA partner.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="tel:+14014209069">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call 401-420-9069
+        </a>
+        <a class="btn btn-ghost" href="#coverage">Find your town</a>
       </div>
-      <div class="service-card-lg">
-        <div class="icon-box"><svg aria-hidden="true"><use href="#i-wrench"/></svg></div>
-        <h3>Roadside Assistance</h3>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#i-bolt"/></svg>Full battery service on the road</li>
-          <li><svg aria-hidden="true"><use href="#i-tire"/></svg>Full tire change on the road*</li>
-          <li><svg aria-hidden="true"><use href="#i-key"/></svg>Lockout service</li>
-          <li><svg aria-hidden="true"><use href="#i-fuel"/></svg>Fuel delivery</li>
-        </ul>
-        <p class="service-note">*We provide the labor to change your tire &mdash; we do not sell or supply replacement tires. You'll need your own spare or a tire on hand.</p>
-        <a class="btn btn-primary" href="tel:+14014209069"><svg aria-hidden="true"><use href="#i-phone"/></svg> Call For a Quote</a>
-      </div>
+      <p class="fine">Answered day and night. West Warwick, RI.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ PHOTO GALLERY ============ -->
-<section class="section" id="gallery">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">Real Photos, Real Jobs</span>
-      <h2>Our Fleet &amp; Recent Work</h2>
-      <p>Our trucks and recent tows across Rhode Island. License plates are blurred for customer privacy.</p>
+<div class="wrap">
+
+<!-- ============================ PROMISE ============================ -->
+<section class="promise" data-anim aria-label="What you get">
+  <div class="cell part"><div class="lbl">24/7</div><p>Someone answers at 3am. Not a machine.</p></div>
+  <div class="cell part"><div class="lbl">AAA partner</div><p>A trusted AAA towing partner for over a decade.</p></div>
+  <div class="cell part"><div class="lbl">Two trucks</div><p>A flatbed and a wrecker. The right one comes out.</p></div>
+</section>
+
+<!-- ============================ SERVICES ============================ -->
+<section class="blk" id="services" data-anim>
+  <div class="part">
+    <div class="kicker">What we come out for</div>
+    <h2 class="big">Two trucks, one phone number, every hour of the year.</h2>
+  </div>
+  <div class="svc">
+    <article class="card part">
+      <div class="shot"><img src="assets/photos/job-14.jpg" alt="A Jeep strapped down on a Centri Auto flatbed" loading="lazy" width="820" height="615"></div>
+      <div class="body">
+        <h3>Flatbed and wrecker</h3>
+        <p>Breakdowns. Accidents. Cars that will not start. Long distance hauls. We run both trucks, so the right one comes out: the bed when your car needs carrying, the wrecker when it needs pulling.</p>
+        <ul><li>Flatbed</li><li>Wrecker</li><li>Local tows</li><li>Accident recovery</li><li>Long distance</li></ul>
+      </div>
+    </article>
+    <article class="card part">
+      <div class="shot"><img src="assets/roadside.jpg" alt="A car on the shoulder at night with its hood up and jumper cables ready" loading="lazy" width="1920" height="1072"></div>
+      <div class="body">
+        <h3>Roadside assistance</h3>
+        <p>Jump starts. Lockouts. Flat tires. Fuel delivery. Winch outs. Most of it we fix where you stand, and you drive away.</p>
+        <ul><li>Jump start</li><li>Lockout</li><li>Flat tire</li><li>Fuel</li><li>Winch out</li></ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="sweep" aria-hidden="true"></div>
+
+<!-- ============================ COVERAGE (the interactive moment) ============================ -->
+<section class="blk" id="coverage" data-anim>
+  <div class="covhead">
+    <h2 class="big part">Find your town.</h2>
+    <div class="part">
+      <p class="lede">We run these roads every night. Pick yours and see what a normal call looks like.</p>
+      <div class="towns" id="towns" role="group" aria-label="Choose your town"></div>
     </div>
-    <div class="gallery-grid" id="photo-gallery">
+  </div>
 
-      <button class="gallery-item feature" data-full="assets/images/fleet-1.jpg" data-caption="Our flatbed, AAA-affiliated">
-        <picture><source srcset="assets/images/fleet-1.webp" type="image/webp"><img src="assets/images/fleet-1.jpg" alt="Centri Auto Towing flatbed truck with AAA roadside assistance decal" loading="lazy" width="1600" height="1200"></picture>
-        <span class="cap">Our Fleet</span>
-      </button>
+  <div class="cov">
+    <div class="part">
+      <div class="map">
+        <svg viewBox="0 0 1000 720" aria-hidden="true" id="mapsvg">
+          <path class="water" d="M1000 400 L880 430 L840 520 L900 600 L860 720 L1000 720 Z"/>
+          <path class="water" d="M0 690 L180 665 L420 690 L700 660 L1000 700 L1000 720 L0 720 Z"/>
+          <path class="land" d="M20 40 L980 20 L980 380 L900 420 L860 520 L890 610 L840 700 L560 672 L300 700 L40 668 L10 470 Z"/>
+          <path class="road" d="M654 93 L788 220 L768 303 L800 525"/>
+          <path class="road" d="M654 93 L502 296 L366 438 L144 490 L46 653"/>
+          <path class="road" d="M502 296 L654 522 L800 525"/>
+          <path class="road" d="M366 438 L334 642 L46 653"/>
+          <path class="road" d="M868 88 L654 93"/>
+          <path class="road" d="M654 522 L334 642"/>
+          <path class="route" id="route" d="" stroke-dasharray="0" stroke-dashoffset="0"/>
+          <g id="dots"></g>
+          <circle class="halo" cx="654" cy="93" r="9"/>
+          <circle class="shop" cx="654" cy="93" r="9"/>
+          <text class="tag" x="654" y="68" text-anchor="middle" fill="#F6B723">THE YARD</text>
+        </svg>
+      </div>
+    </div>
 
-      <button class="gallery-item" data-full="assets/images/fleet-2.jpg" data-caption="Flatbed, ready for the next call">
-        <picture><source srcset="assets/images/fleet-2.webp" type="image/webp"><img src="assets/images/fleet-2.jpg" alt="Centri Auto Towing flatbed truck rear view" loading="lazy" width="1600" height="1200"></picture>
-        <span class="cap">Ready to Roll</span>
-      </button>
+    <aside class="readout part" aria-live="polite">
+      <div class="to">Truck from West Warwick to</div>
+      <div class="name" id="rName">West Warwick</div>
+      <div class="eta" id="rEta">10 to 20 min</div>
+      <div class="etalbl">Typical arrival</div>
+      <p class="note">Windows are typical, not promises. Weather and traffic are real. We tell you the truth on the phone.</p>
+      <a class="btn btn-primary" href="tel:+14014209069">Call 401-420-9069</a>
+    </aside>
+  </div>
+</section>
 
-      <button class="gallery-item" data-full="assets/images/fleet-3.jpg" data-caption="Our truck, front view">
-        <picture><source srcset="assets/images/fleet-3.webp" type="image/webp"><img src="assets/images/fleet-3.jpg" alt="Centri Auto Towing flatbed truck front view" loading="lazy" width="1200" height="1600"></picture>
-        <span class="cap">On Call</span>
-      </button>
+<div class="sweep" aria-hidden="true"></div>
 
-      <button class="gallery-item" data-full="assets/images/fleet-5.jpg" data-caption="Flatbed, ready for dispatch">
-        <picture><source srcset="assets/images/fleet-5.webp" type="image/webp"><img src="assets/images/fleet-5.jpg" alt="Centri Auto Towing flatbed truck" loading="lazy" width="812" height="572"></picture>
-        <span class="cap">Ready for Dispatch</span>
-      </button>
+<!-- ============================ ABOUT AND FLEET ============================ -->
+<section class="blk" id="about" data-anim>
+  <div class="abouthead">
+    <div class="part">
+      <div class="kicker">Who you are calling</div>
+      <h2 class="big">Fifteen years around cars, twelve of them towing.</h2>
+    </div>
+    <div class="part">
+      <p>Centri Auto is owned by someone who has spent fifteen years in the automotive industry and also runs a collision and mechanic shop. About twelve of those years have been spent as an AAA affiliated towing partner.</p>
+      <p>The trucks below are ours. You are not calling a number that farms the job out to whoever answers first.</p>
+    </div>
+  </div>
 
-      <button class="gallery-item" data-full="assets/images/fleet-7.jpg" data-caption="Flatbed at our shop">
-        <picture><source srcset="assets/images/fleet-7.webp" type="image/webp"><img src="assets/images/fleet-7.jpg" alt="Centri Auto Towing flatbed truck parked at the shop" loading="lazy" width="1600" height="1200"></picture>
-        <span class="cap">At Our Shop</span>
-      </button>
+  <div class="stats part">
+    <div class="s"><div class="n">15 years</div><div class="l">In the automotive industry, running a collision and mechanic shop alongside the towing.</div></div>
+    <div class="s"><div class="n">12 years</div><div class="l">As an AAA affiliated towing partner, which is not a badge they hand out lightly.</div></div>
+    <div class="s"><div class="n">88%+</div><div class="l">Customer satisfaction. Survey ratings have stayed at that level or better.</div></div>
+  </div>
 
-      <button class="gallery-item" data-full="assets/images/job-11.jpg" data-caption="Jeep Wrangler flatbed tow">
-        <picture><source srcset="assets/images/job-11.webp" type="image/webp"><img src="assets/images/job-11.jpg" alt="Jeep Wrangler loaded on a Centri Auto flatbed tow truck" loading="lazy" width="1400" height="1050"></picture>
-        <span class="cap">SUV Recovery</span>
-      </button>
+  <div class="part">
+    <div class="fleetstrip" id="fleetStrip" tabindex="0" role="region" aria-label="Photographs of the Centri Auto fleet, scroll sideways to see them all">
+      <figure><img src="assets/photos/fleet-01.jpg" alt="Silver Ram 5500 flatbed parked at the yard" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-02.jpg" alt="Red Hino flatbed, front view" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-04.jpg" alt="Red Hino flatbed with the bed empty, side view" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-06.jpg" alt="Dark Ford tow truck at the yard in the evening light" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-07.jpg" alt="Red Hino flatbed and the black wrecker parked together" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-10.jpg" alt="Silver Ram 5500 flatbed on a wet morning" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-11.jpg" alt="Flatbed deck tilted down and ready to load" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-12.jpg" alt="The black wrecker with its boom raised" loading="lazy" width="900" height="675"></figure>
+      <figure><img src="assets/photos/fleet-13.jpg" alt="Black Ford wrecker, front view" loading="lazy" width="900" height="675"></figure>
+    </div>
+    <p class="striphint"><span></span>Drag or swipe to see the whole fleet</p>
+  </div>
+</section>
 
-      <button class="gallery-item" data-full="assets/images/job-13.jpg" data-caption="Roadside tire change">
-        <picture><source srcset="assets/images/job-13.webp" type="image/webp"><img src="assets/images/job-13.jpg" alt="Roadside tire change on a sedan" loading="lazy" width="899" height="1599"></picture>
-        <span class="cap">Tire Change</span>
-      </button>
+<div class="chain" aria-hidden="true">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none" id="chainSvg">
+    <path class="lnk" d="M20 17h60M110 17h60M200 17h60M290 17h60M380 17h60M470 17h60M560 17h60M650 17h60M740 17h60M830 17h60M920 17h60M1010 17h60M1100 17h60"/>
+    <path class="lnk" d="M85 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M175 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M265 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M355 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M445 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M535 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M625 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M715 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M805 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M895 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M985 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0M1075 17a12 12 0 1 1 24 0 12 12 0 1 1-24 0"/>
+  </svg>
+</div>
 
-      <button class="gallery-item" data-full="assets/images/job-14.jpg" data-caption="Spare tire fitted roadside">
-        <picture><source srcset="assets/images/job-14.webp" type="image/webp"><img src="assets/images/job-14.jpg" alt="Spare tire fitted during a roadside call" loading="lazy" width="899" height="1599"></picture>
-        <span class="cap">Tire Change</span>
-      </button>
+<!-- ============================ REAL WORK ============================ -->
+<section class="blk" id="work" data-anim>
+  <div class="part">
+    <div class="kicker">Proof</div>
+    <h2 class="big">Real jobs, real trucks.</h2>
+    <p class="lede">No stock photos. Every one of these is a car we came out for.</p>
+  </div>
+  <div class="gal clip" id="galWrap">
+    <figure class="part"><img src="assets/photos/job-10.jpg" alt="Red Tesla strapped down on the flatbed" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-16.jpg" alt="The red Centri Auto flatbed with a car loaded outside a house" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-14.jpg" alt="Jeep Wrangler strapped down on the flatbed" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-13.jpg" alt="White Hummer beside the truck on gravel" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-18.jpg" alt="Black SUV recovered on dollies" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-20.jpg" alt="Silver sedan being loaded on a wooded driveway" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-05.jpg" alt="Black Jeep Compass loaded on the flatbed" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-07.jpg" alt="Dark blue SUV loaded on the flatbed" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-11.jpg" alt="White Hummer on the flatbed" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-12.jpg" alt="White Hummer loaded, rear view" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-19.jpg" alt="Black SUV on dollies, rear view" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-15.jpg" alt="Silver sedan being winched from a driveway" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-01.jpg" alt="Black pickup loaded on the flatbed on a wet road" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-09.jpg" alt="Green sedan being loaded from a driveway" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-08.jpg" alt="Maroon sedan on the flatbed" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-02.jpg" alt="Red sedan being winched onto the flatbed" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-17.jpg" alt="Black convertible with a spare wheel fitted" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-03.jpg" alt="Changing a wheel at the roadside" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-06.jpg" alt="A spare wheel fitted to a customer car" loading="lazy" width="820" height="615"></figure>
+    <figure class="part"><img src="assets/photos/job-04.jpg" alt="A spare wheel fitted at the roadside" loading="lazy" width="820" height="615"></figure>
+  </div>
+  <button class="btn btn-ghost galmore" id="galMore" type="button" aria-expanded="false" aria-controls="galWrap">See all 20 photos</button>
+</section>
 
-      <button class="gallery-item" data-full="assets/images/job-8.jpg" data-caption="Sedan flatbed tow">
-        <picture><source srcset="assets/images/job-8.webp" type="image/webp"><img src="assets/images/job-8.jpg" alt="Sedan loaded on a flatbed tow truck" loading="lazy" width="576" height="1024"></picture>
-        <span class="cap">Sedan Tow</span>
-      </button>
+<!-- ============================ CUSTOMER REVIEWS ============================ -->
+<section class="blk" id="reviews" data-anim>
+  <div class="revhead part">
+    <div class="kicker">Customer reviews</div>
+    <h2 class="big">What drivers are saying.</h2>
+    <p class="lede">Real feedback from drivers we have helped across Rhode Island.</p>
+  </div>
 
-      <button class="gallery-item" data-full="assets/images/job-12.jpg" data-caption="Pickup truck recovery in the rain">
-        <picture><source srcset="assets/images/job-12.webp" type="image/webp"><img src="assets/images/job-12.jpg" alt="Pickup truck being towed in the rain" loading="lazy" width="1024" height="576"></picture>
-        <span class="cap">Storm Recovery</span>
-      </button>
+  <div class="revwrap clip" id="revWrap">
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Matt from the towing company was fantastic! He showed up when he said he would, he got the car loaded safely and swiftly and in turn dropped it off in the same manner. He was a great tow driver.”</p>
+      <cite>Meghan</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“The driver arrived within 15 minutes. He was polite, helpful and courteous.”</p>
+      <cite>Terrie</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Irving was fantastic, nice, very polite and quick! He was great.”</p>
+      <cite>Wendy</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“The driver came in a timely fashion and demonstrated a friendly, competent approach to helping us.”</p>
+      <cite>Dean</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Christian was very knowledgeable and efficient. He came promptly and took care of business! We were extremely satisfied, his guidance for driving home on the donut wheel as we had a long way to go (from Rhode Island to New York) was invaluable!”</p>
+      <cite>Sherri</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Hai L. arrived at the scene. He was professional and helpful in spite of the downpour. He quickly got my vehicle going again.”</p>
+      <cite>Jeffrey</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Dante was great! Arrived super quickly and changed my tire even quicker!”</p>
+      <cite>Ava</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Matthew Sim was very helpful and courteous. It was late at night for him, but he still ensured that he provided the best assistance, and he did!”</p>
+      <cite>Brenda</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Driver Don quickly arrived, diagnosed the battery issue and installed a new battery. Couldn't have done that quicker if I took it to a garage myself.”</p>
+      <cite>Charles</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Alex was very professional and took care of my car perfectly.”</p>
+      <cite>Jennifer</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Everyone was very polite and helpful from the beginning of the phone call until the end. When the service man opened my door, very professional. Very nice, can't say enough good things.”</p>
+      <cite>Maryann</cite>
+    </blockquote>
+    <blockquote class="rev part">
+      <div class="stars" role="img" aria-label="Five out of five stars"></div>
+      <p>“Battery specialist at my driveway within an hour of my request for service. Problem diagnosed and battery replaced in 40 minutes. Could not ask for better service.”</p>
+      <cite>William</cite>
+    </blockquote>
+  </div>
 
-      <button class="gallery-item" data-full="assets/images/job-10.jpg" data-caption="Hummer H2, front view">
-        <picture><source srcset="assets/images/job-10.webp" type="image/webp"><img src="assets/images/job-10.jpg" alt="Hummer H2 front view on flatbed" loading="lazy" width="1024" height="768"></picture>
-        <span class="cap">Full-Size Recovery</span>
-      </button>
+  <button class="btn btn-ghost revmore" id="revMore" type="button" aria-expanded="false" aria-controls="revWrap">Read all 12 reviews</button>
+</section>
 
-      <button class="gallery-item" data-full="assets/images/job-1.jpg" data-caption="SUV flatbed recovery">
-        <picture><source srcset="assets/images/job-1.webp" type="image/webp"><img src="assets/images/job-1.jpg" alt="Black SUV loaded onto a Centri Auto flatbed tow truck" loading="lazy" width="768" height="1024"></picture>
-        <span class="cap">SUV Recovery</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-3.jpg" data-caption="SUV flatbed tow">
-        <picture><source srcset="assets/images/job-3.webp" type="image/webp"><img src="assets/images/job-3.jpg" alt="SUV loaded onto a Centri Auto flatbed tow truck in a parking lot" loading="lazy" width="768" height="1024"></picture>
-        <span class="cap">SUV Recovery</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-4.jpg" data-caption="Sedan recovery">
-        <picture><source srcset="assets/images/job-4.webp" type="image/webp"><img src="assets/images/job-4.jpg" alt="Sedan loaded onto a Centri Auto flatbed tow truck" loading="lazy" width="768" height="1024"></picture>
-        <span class="cap">Sedan Recovery</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-5.jpg" data-caption="Sedan tow, driveway pickup">
-        <picture><source srcset="assets/images/job-5.webp" type="image/webp"><img src="assets/images/job-5.jpg" alt="Sedan loaded onto a Centri Auto flatbed tow truck in a residential driveway" loading="lazy" width="768" height="1024"></picture>
-        <span class="cap">Sedan Tow</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-6.jpg" data-caption="EV transport">
-        <picture><source srcset="assets/images/job-6.webp" type="image/webp"><img src="assets/images/job-6.jpg" alt="Red electric SUV loaded onto a Centri Auto flatbed tow truck" loading="lazy" width="1200" height="674"></picture>
-        <span class="cap">EV Transport</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-2.jpg" data-caption="Roadside tire service">
-        <picture><source srcset="assets/images/job-2.webp" type="image/webp"><img src="assets/images/job-2.jpg" alt="Spare tire fitted on a vehicle during roadside service" loading="lazy" width="899" height="1599"></picture>
-        <span class="cap">Tire Service</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-15.jpg" data-caption="Full-size SUV recovery">
-        <picture><source srcset="assets/images/job-15.webp" type="image/webp"><img src="assets/images/job-15.jpg" alt="Hummer H2 loaded onto a Centri Auto flatbed tow truck" loading="lazy" width="1024" height="768"></picture>
-        <span class="cap">Full-Size Recovery</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-16.jpg" data-caption="SUV recovery on tow dolly">
-        <picture><source srcset="assets/images/job-16.webp" type="image/webp"><img src="assets/images/job-16.jpg" alt="Jeep Cherokee on a tow dolly, front view" loading="lazy" width="768" height="1024"></picture>
-        <span class="cap">SUV Recovery</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-17.jpg" data-caption="SUV recovery on tow dolly">
-        <picture><source srcset="assets/images/job-17.webp" type="image/webp"><img src="assets/images/job-17.jpg" alt="Jeep Cherokee on a tow dolly, rear view" loading="lazy" width="768" height="1024"></picture>
-        <span class="cap">SUV Recovery</span>
-      </button>
-
-      <button class="gallery-item" data-full="assets/images/job-18.jpg" data-caption="Sedan recovery, wooded driveway">
-        <picture><source srcset="assets/images/job-18.webp" type="image/webp"><img src="assets/images/job-18.jpg" alt="Silver Ford Taurus loaded onto a Centri Auto flatbed tow truck" loading="lazy" width="768" height="1024"></picture>
-        <span class="cap">Sedan Recovery</span>
-      </button>
-
+<!-- ============================ COST ============================ -->
+<section class="blk" id="cost" data-anim>
+  <div class="cost">
+    <div class="part">
+      <div class="kicker">Price</div>
+      <h2 class="big">No mystery bill.</h2>
+      <p class="lede">The number one thing people say about a bad tow is that nobody told them what it would cost until it was too late to say no.</p>
+    </div>
+    <div class="box part">
+      <h3>How it works</h3>
+      <p>You get the price on the phone, before a truck rolls. Distance, the kind of tow, and that is it. No surprises when the truck shows up.</p>
+      <div class="aaa">
+        <span class="t">AAA partner</span>
+        <span class="d">An AAA affiliated towing partner for around twelve years. Call us direct on 401-420-9069.</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SERVICE AREAS ============ -->
-<section class="section alt" id="areas">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">Service Area</span>
-      <h2>Proudly Serving South County &amp; Beyond</h2>
-      <p>Based in West Warwick, RI and dispatching across these Rhode Island towns.</p>
+<div class="sweep" aria-hidden="true"></div>
+
+<!-- ============================ FAQ ============================ -->
+<section class="blk" id="faq" data-anim>
+  <div class="faqwrap">
+  <div class="faqhead part">
+    <div class="kicker">Straight answers</div>
+    <h2 class="big">The things people ask at 2am.</h2>
+    <p class="lede">If the answer you need is not here, calling is faster than reading. <a class="nw" href="tel:+14014209069">401-420-9069</a>.</p>
+  </div>
+  <div class="faq" id="faqList">
+    <div class="q part" data-open="false">
+      <button type="button" aria-expanded="false"><span class="n">01</span><span>How fast can you actually get here?</span><span class="pm" aria-hidden="true"></span></button>
+      <div class="ans"><div><p>Most calls in our area land in the thirty to forty five minute range, and the honest answer depends on where you are and what the night looks like. We give you a real window on the phone and we call you if it moves.</p></div></div>
     </div>
-    <div class="areas-layout">
-      <div class="area-list">
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>Narragansett</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>Warwick</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>North Kingstown</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>South Kingstown</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>Exeter</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>East Greenwich</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>Westerly</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>Charlestown</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>Hopkinton</span>
-        <span class="area-pill"><svg aria-hidden="true"><use href="#i-pin"/></svg>Richmond</span>
-      </div>
-      <div class="map-embed">
-        <iframe
-          title="Map showing Centri Auto Towing & Mechanical location in West Warwick, RI"
-          src="https://www.google.com/maps?q=245+Quaker+Lane+Unit+1,+West+Warwick,+RI+02893&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+    <div class="q part" data-open="false">
+      <button type="button" aria-expanded="false"><span class="n">02</span><span>Do you cover my town?</span><span class="pm" aria-hidden="true"></span></button>
+      <div class="ans"><div><p>South County and Kent County. Warwick, West Warwick, East Greenwich, North and South Kingstown, Narragansett, Exeter, Richmond, Charlestown, Hopkinton and Westerly. If you are just outside, call anyway and we will tell you straight.</p></div></div>
     </div>
+    <div class="q part" data-open="false">
+      <button type="button" aria-expanded="false"><span class="n">03</span><span>Are you AAA affiliated?</span><span class="pm" aria-hidden="true"></span></button>
+      <div class="ans"><div><p>Yes, and we have been for around twelve years. Call us direct on <a class="nw" href="tel:+14014209069">401-420-9069</a> and we take care of it from there.</p></div></div>
+    </div>
+    <div class="q part" data-open="false">
+      <button type="button" aria-expanded="false"><span class="n">04</span><span>Will my car get damaged?</span><span class="pm" aria-hidden="true"></span></button>
+      <div class="ans"><div><p>Most cars ride on the flatbed with all four wheels off the ground, which is the safest way to move a car. Some jobs need the wrecker instead, and we tell you which one is coming when you call. Either way it gets secured properly and it comes back the way it left.</p></div></div>
+    </div>
+    <div class="q part" data-open="false">
+      <button type="button" aria-expanded="false"><span class="n">05</span><span>It is 3am. Is anyone really awake?</span><span class="pm" aria-hidden="true"></span></button>
+      <div class="ans"><div><p>Yes. That is the whole job. Call <a class="nw" href="tel:+14014209069">401-420-9069</a>.</p></div></div>
+    </div>
+  </div>
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
-<section class="section" id="reviews">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">Customer Reviews</span>
-      <h2>What Drivers Are Saying</h2>
-      <p>Real feedback from drivers we've helped across Rhode Island.</p>
+<!-- ============================ LAST CALL ============================ -->
+<section class="last" id="contact" data-anim>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="inner">
+    <div class="part">
+      <h2>Tell us where<br>you are.</h2>
+      <p class="sub">One call, day or night. <span class="nw">401-420-9069</span>.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="tel:+14014209069">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call 401-420-9069
+        </a>
+      </div>
+      <dl class="meta">
+        <div><dt>Hours</dt><dd>Open 24 hours, every day. Someone picks up.</dd></div>
+        <div><dt>The yard</dt><dd>245 Quaker Lane, Unit 1<br>West Warwick, RI 02893</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:centriautori@gmail.com">centriautori@gmail.com</a></dd></div>
+      </dl>
     </div>
-    <div class="grid grid-3">
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Matt from the towing company was fantastic! He showed up when he said he would, he got the car loaded safely and swiftly and in turn dropped it off in the same manner. He was a great tow driver.&rdquo;</p>
-        <span class="who">&mdash; Meghan</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;The driver arrived within 15 minutes. He was polite, helpful &amp; courteous.&rdquo;</p>
-        <span class="who">&mdash; Terrie</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Irving was fantastic, nice, very polite and quick! He was great.&rdquo;</p>
-        <span class="who">&mdash; Wendy</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;The driver came in a timely fashion and demonstrated a friendly, competent approach to helping us.&rdquo;</p>
-        <span class="who">&mdash; Dean</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Christian was very knowledgeable and efficient. He came promptly and took care of business! We were extremely satisfied &mdash; his guidance for driving home on the donut wheel as we had a long way to go (from Rhode Island to New York) was invaluable!&rdquo;</p>
-        <span class="who">&mdash; Sherri</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Hai L. arrived at the scene. He was professional and helpful in spite of the downpour. He quickly got my vehicle going again.&rdquo;</p>
-        <span class="who">&mdash; Jeffrey</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Dante was great! Arrived super quickly and changed my tire even quicker!&rdquo;</p>
-        <span class="who">&mdash; Ava</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Matthew Sim was very helpful and courteous. It was late at night for him, but he still ensured that he provided the best assistance &mdash; and he did!&rdquo;</p>
-        <span class="who">&mdash; Brenda</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Driver Don quickly arrived, diagnosed the battery issue and installed a new battery. Couldn't have done that quicker if I took it to a garage myself.&rdquo;</p>
-        <span class="who">&mdash; Charles</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Alex was very professional and took care of my car perfectly.&rdquo;</p>
-        <span class="who">&mdash; Jennifer</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Everyone was very polite and helpful from the beginning of the phone call until the end. When the service man opened my door, very professional. Very nice, can't say enough good things.&rdquo;</p>
-        <span class="who">&mdash; Maryann</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <p>&ldquo;Battery specialist at my driveway within an hour of my request for service. Problem diagnosed and battery replaced in 40 minutes. Could not ask for better service.&rdquo;</p>
-        <span class="who">&mdash; William</span>
-      </div>
-    </div>
+
+    <form class="part" id="msg" novalidate>
+      <div class="ttl">Not an emergency?</div>
+      <p class="hint">Send us the details and we will get back to you.</p>
+      <div class="fld"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="fld"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="fld"><label for="f-where">Where the car is</label><input id="f-where" name="where" type="text" required></div>
+      <div class="fld"><label for="f-what">What is going on</label><textarea id="f-what" name="what" placeholder="Won't start, needs to get to a shop in Wakefield" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Send it</button>
+      <p class="formerr" id="formerr" role="status">Fill in the highlighted boxes and we will have everything we need.</p>
+      <div class="sent" id="sent">Got it. We will call you back at the number you gave us. If this turns urgent, call <span class="nw">401-420-9069</span> and we will move.</div>
+    </form>
   </div>
 </section>
 
-<!-- ============ FINAL CTA ============ -->
-<section class="section alt">
-  <div class="container">
-    <div class="cta-banner">
-      <h2>Stranded? We're On Call 24/7.</h2>
-      <p>One call gets a Centri Auto truck headed your way &mdash; day or night, anywhere in South County RI.</p>
-      <a class="call-btn call-btn-hero" href="tel:+14014209069">
-        <svg aria-hidden="true"><use href="#i-phone"/></svg>
-        <span class="hero-call-wrap">
-          <span class="hero-call-label">Call Now</span>
-          <span class="hero-call-divider" aria-hidden="true"></span>
-          <span class="hero-call-number">(401) 420-9069</span>
-        </span>
-      </a>
+</div><!-- /wrap -->
+</main>
+
+<footer>
+  <div class="fwrap">
+    <div>
+      <img src="assets/logo.png" alt="Centri Auto Towing &amp; Mechanical" width="440" height="243" loading="lazy">
+      <p>24 hour towing and roadside assistance,<br>run out of West Warwick, Rhode Island.</p>
+    </div>
+    <div>
+      <h4>Reach us</h4>
+      <p><a href="tel:+14014209069">401-420-9069</a><br>
+      <a href="mailto:centriautori@gmail.com">centriautori@gmail.com</a><br>
+      245 Quaker Lane, Unit 1<br>West Warwick, RI 02893</p>
+    </div>
+    <div>
+      <h4>Service area</h4>
+      <p>Warwick · West Warwick · East Greenwich · North Kingstown · South Kingstown · Narragansett · Exeter · Richmond · Charlestown · Hopkinton · Westerly</p>
     </div>
   </div>
-</section>
-
-<!-- ============ CONTACT / FOOTER ============ -->
-<footer class="site-footer" id="contact">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="assets/images/logo.png?v=8" alt="Centri Auto Towing & Mechanical" width="91" height="50">
-      </div>
-    </div>
-    <div class="contact-layout">
-      <div class="info-row">
-        <div class="icon-box"><svg aria-hidden="true"><use href="#i-mail"/></svg></div>
-        <div><strong>Email</strong><p><a href="mailto:centriautori@gmail.com">centriautori@gmail.com</a></p></div>
-      </div>
-      <div class="info-row">
-        <div class="icon-box"><svg aria-hidden="true"><use href="#i-pin"/></svg></div>
-        <div><strong>Address</strong><p>245 Quaker Lane, Unit 1<br>West Warwick, RI 02893</p></div>
-      </div>
-      <div class="info-row">
-        <div class="icon-box"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
-        <div><strong>Hours</strong><p>Open 24/7 &mdash; every day of the year</p></div>
-      </div>
-      <div class="info-row">
-        <div class="icon-box"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
-        <div><strong>Affiliation</strong><p>AAA-affiliated towing partner</p></div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> Centri Auto Towing &amp; Mechanical. All rights reserved.</span>
-      <span>Serving West Warwick &amp; South County, Rhode Island</span>
-    </div>
+  <div class="fbot">
+    <span>&copy; <span id="yr">2026</span> Centri Auto Towing &amp; Mechanical</span>
+    <span>Open 24 hours, every day · AAA partner</span>
   </div>
 </footer>
 
-</main>
+<a class="btn btn-primary fab" href="tel:+14014209069">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  Call 401-420-9069
+</a>
 
-<!-- ============ MOBILE STICKY CALL BAR ============ -->
-<div class="mobile-call-bar">
-  <a class="call-btn call-btn-bar" href="tel:+14014209069">
-    <svg aria-hidden="true"><use href="#i-phone"/></svg> Call For Roadside Assistance
-  </a>
-</div>
+<script>
+(function(){
+'use strict';
 
-<!-- ============ LIGHTBOX ============ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button class="lightbox-close" id="lightbox-close" aria-label="Close photo viewer"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
-  <img id="lightbox-img" alt="">
-</div>
+/* ---------------------------------------------------------
+   0. small helpers
+   --------------------------------------------------------- */
+var clamp=function(v,lo,hi){return Math.min(hi,Math.max(lo,v));};
+var smoothstep=function(p,e0,e1){var t=clamp((p-e0)/(e1-e0),0,1);return t*t*(3-2*t);};
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+document.getElementById('yr').textContent=new Date().getFullYear();
 
-<script src="js/main.js?v=8"></script>
+/* ---------------------------------------------------------
+   1. split the hero headlines once, at load
+   --------------------------------------------------------- */
+var bandEls=[].slice.call(document.querySelectorAll('.band'));
+
+function splitLine(el,fx,spread,emIndex){
+  var text=el.textContent.trim();
+  var r=rng(text.length*7919+text.charCodeAt(0)*131);
+  el.textContent='';
+  var sr=document.createElement('span');sr.className='sr-only';sr.textContent=text;el.appendChild(sr);
+
+  if(fx==='blur'){
+    var soft=document.createElement('span');soft.className='soft';soft.setAttribute('aria-hidden','true');soft.textContent=text;
+    var sharp=document.createElement('span');sharp.className='sharp';sharp.setAttribute('aria-hidden','true');sharp.textContent=text;
+    el.appendChild(soft);el.appendChild(sharp);
+    return;
+  }
+
+  var vis=document.createElement('span');vis.className='vis';vis.setAttribute('aria-hidden','true');
+  var words=text.split(' ');
+  words.forEach(function(word,wi){
+    var ws=document.createElement('span');ws.className='w';
+    if(emIndex!==null&&wi===emIndex)ws.classList.add('em');
+    ws.style.setProperty('--th',(wi/Math.max(1,words.length-1)*spread).toFixed(3));
+    if(fx==='drift'||fx==='rise'||fx==='punch'){
+      ws.textContent=word;
+    }else{
+      for(var i=0;i<word.length;i++){
+        var cs=document.createElement('span');cs.className='c';cs.textContent=word[i];
+        cs.style.setProperty('--th',(r()*0.5).toFixed(3));
+        cs.style.setProperty('--jx',((r()*2-1)*48).toFixed(1)+'px');
+        cs.style.setProperty('--jy',((r()*2-1)*40).toFixed(1)+'px');
+        cs.style.setProperty('--jr',((r()*2-1)*22).toFixed(1)+'deg');
+        ws.appendChild(cs);
+      }
+    }
+    vis.appendChild(ws);
+    if(wi<words.length-1)vis.appendChild(document.createTextNode(' '));
+  });
+  el.appendChild(vis);
+}
+
+var bands=bandEls.map(function(el,i){
+  var fx=el.getAttribute('data-fx');
+  var spread=parseFloat(el.getAttribute('data-spread')||'0.4');
+  var em=el.getAttribute('data-em');
+  var line=el.querySelector('.split');
+  if(line)splitLine(line,fx,spread,em===null?null:parseInt(em,10));
+  return {
+    el:el,
+    a:parseFloat(el.getAttribute('data-a')),
+    b:parseFloat(el.getAttribute('data-b')),
+    ramp:parseFloat(el.getAttribute('data-ramp')||'0')||0,
+    first:i===0,
+    last:i===bandEls.length-1,
+    op:-1,k:-1,inert:null
+  };
+});
+
+/* ---------------------------------------------------------
+   2. hero geometry + caption drive (delta-gated writes only)
+   --------------------------------------------------------- */
+var heroEl=document.getElementById('hero');
+var stage=document.getElementById('stage');
+var video=document.getElementById('hero-video');
+var poster=document.getElementById('poster');
+var ring=document.getElementById('ring');
+
+function heroProgress(){
+  var total=heroEl.offsetHeight-window.innerHeight;
+  if(total<=0)return 0;
+  return clamp(-heroEl.getBoundingClientRect().top/total,0,1);
+}
+
+var loadK=0;
+function updateCaptions(p){
+  for(var i=0;i<bands.length;i++){
+    var b=bands[i],a=b.a,c=b.b;
+    var f=Math.min(0.02,(c-a)/3);
+    var op;
+    if(b.first){op=1-smoothstep(p,c-f,c);}
+    else if(b.last){op=smoothstep(p,a,a+f);}
+    else{op=smoothstep(p,a,a+f)*(1-smoothstep(p,c-f,c));}
+    var ramp=b.ramp||Math.min(0.025,(c-a)*0.35);
+    var k=clamp((p-a)/ramp,0,1);
+    if(b.first)k=Math.max(k,loadK);
+    if(Math.abs(op-b.op)>0.004){
+      b.op=op;
+      b.el.style.opacity=op.toFixed(3);
+      var hide=op<0.5;
+      if(b.inert!==hide){b.inert=hide;b.el.inert=hide;}
+    }
+    if(Math.abs(k-b.k)>0.008){b.k=k;b.el.style.setProperty('--k',k.toFixed(3));}
+  }
+}
+
+/* ---------------------------------------------------------
+   3. gated seeks (deadlock safe)
+   --------------------------------------------------------- */
+var seekBusy=false,pendingTime=null;
+function requestSeek(t){
+  if(!video.duration)return;
+  if(seekBusy){pendingTime=t;return;}
+  seekBusy=true;
+  try{video.currentTime=t;}catch(e){seekBusy=false;}
+}
+video.addEventListener('seeked',function(){
+  seekBusy=false;
+  if(pendingTime!==null){var t=pendingTime;pendingTime=null;requestSeek(t);}
+});
+video.addEventListener('error',function(){seekBusy=false;pendingTime=null;failVideo();});
+
+/* ---------------------------------------------------------
+   4. the rAF loop that rests
+   --------------------------------------------------------- */
+var target=0,shown=0,rafId=null,lastTick=0,heroOnScreen=true;
+
+function tick(now){
+  var dt=Math.min(100,now-(lastTick||now));
+  lastTick=now;
+  var k=0.16;
+  shown+=(target-shown)*(1-Math.pow(1-k,dt/16.667));
+  if(Math.abs(target-shown)<0.0005){shown=target;rafId=null;lastTick=0;}
+  else{rafId=requestAnimationFrame(tick);}
+  if(video.duration)requestSeek(shown*video.duration);
+  updateCaptions(shown);
+}
+function onScroll(){
+  target=heroProgress();
+  if(rafId===null&&heroOnScreen)rafId=requestAnimationFrame(tick);
+}
+
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(es){
+    heroOnScreen=es[0].isIntersecting;
+    if(heroOnScreen&&rafId===null&&scrubOn)rafId=requestAnimationFrame(tick);
+  },{rootMargin:'120px'}).observe(heroEl);
+}
+
+/* ---------------------------------------------------------
+   5. the streamed Blob loader with an honest ring
+   --------------------------------------------------------- */
+var VIDEO_URL='assets/hero-scrub.mp4';
+var VIDEO_BYTES=5038970;
+var heroInit=false;
+
+function failVideo(){
+  if(stage.classList.contains('video-ready'))return;
+  stage.classList.add('video-failed');
+  if(ring&&ring.parentNode){
+    var chev=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    chev.setAttribute('class','chev');chev.setAttribute('viewBox','0 0 48 48');chev.setAttribute('aria-hidden','true');
+    chev.innerHTML='<path d="M14 20l10 10 10-10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>';
+    ring.parentNode.replaceChild(chev,ring);
+    ring=null;
+  }
+}
+
+function loadHeroBlob(){
+  var ctrl=new AbortController();
+  var watchdog=setTimeout(function(){ctrl.abort();},20000);
+  return fetch(VIDEO_URL,{signal:ctrl.signal}).then(function(res){
+    if(!res.ok||!res.body)throw new Error('no body');
+    var total=Number(res.headers.get('Content-Length'))||VIDEO_BYTES;
+    var reader=res.body.getReader();
+    var chunks=[],got=0,lastRing=0;
+    function pump(){
+      return reader.read().then(function(r){
+        if(r.done)return;
+        clearTimeout(watchdog);
+        watchdog=setTimeout(function(){ctrl.abort();},20000);
+        chunks.push(r.value);got+=r.value.length;
+        var frac=Math.min(1,got/total),now=performance.now();
+        if(ring&&(now-lastRing>100||frac===1)){
+          lastRing=now;
+          ring.style.setProperty('--ld',Math.round(126*(1-frac)));
+        }
+        return pump();
+      });
+    }
+    return pump().then(function(){
+      clearTimeout(watchdog);
+      if(ring)ring.style.setProperty('--ld',0);
+      video.src=URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));
+      video.load();
+      video.addEventListener('canplay',function(){
+        requestSeek(heroProgress()*video.duration);
+        stage.classList.add('video-ready');
+      },{once:true});
+    });
+  });
+}
+
+function initHeroOnce(){
+  if(heroInit)return;
+  heroInit=true;
+  poster.style.backgroundImage="url('assets/hero-poster.jpg')";
+  var started=false;
+  function start(){if(started)return;started=true;loadHeroBlob().catch(failVideo);}
+  var pi=new Image();
+  pi.onload=start;pi.onerror=start;pi.src='assets/hero-poster.jpg';
+  setTimeout(start,4000);
+  // band one assembles itself on load, then hands over to scroll
+  var t0=0;
+  (function ramp(t){
+    if(!t0)t0=t;
+    loadK=Math.min(1,(t-t0)/1000);
+    updateCaptions(shown);
+    if(loadK<1)requestAnimationFrame(ramp);
+  })(performance.now());
+}
+
+/* ---------------------------------------------------------
+   6. THE FIVE STATIC-HERO GATES (identical strings to the CSS)
+   --------------------------------------------------------- */
+var GATES=[
+  '(max-width: 720px)',
+  '(orientation: portrait) and (max-width: 1024px)',
+  '(orientation: portrait) and (pointer: coarse)',
+  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+  '(prefers-reduced-motion: reduce)'
+];
+var scrubOn=false;
+
+function enableScrub(){
+  if(scrubOn)return;scrubOn=true;
+  initHeroOnce();
+  window.addEventListener('scroll',onScroll,{passive:true});
+  bands.forEach(function(b){b.op=-1;b.k=-1;b.inert=null;});
+  unpinFinalStates();
+  updateCaptions(heroProgress());
+  onScroll();
+}
+function disableScrub(){
+  if(!scrubOn)return;scrubOn=false;
+  window.removeEventListener('scroll',onScroll);
+  if(rafId!==null){cancelAnimationFrame(rafId);rafId=null;}
+}
+function applyHeroMode(){
+  var hit=false;
+  for(var i=0;i<GATES.length;i++){if(matchMedia(GATES[i]).matches){hit=true;break;}}
+  if(hit)disableScrub();else enableScrub();
+}
+var MQLS=GATES.map(function(q){return matchMedia(q);});
+MQLS.forEach(function(m){
+  if(m.addEventListener)m.addEventListener('change',applyHeroMode);
+  else if(m.addListener)m.addListener(applyHeroMode);
+});
+
+/* ---------------------------------------------------------
+   7. entrances, staggered then retired
+   --------------------------------------------------------- */
+var reduce=matchMedia('(prefers-reduced-motion: reduce)');
+
+function revealGroup(group){
+  var parts=[].slice.call(group.querySelectorAll('.part'));
+  if(reduce.matches){group.classList.add('in');return;}
+  parts.forEach(function(p,i){p.style.transitionDelay=(i*80)+'ms';});
+  group.classList.add('in');
+  setTimeout(function(){parts.forEach(function(p){p.style.transitionDelay='';});},parts.length*80+950);
+}
+
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){revealGroup(e.target);io.unobserve(e.target);}
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:0.08});
+  [].slice.call(document.querySelectorAll('[data-anim]')).forEach(function(g){io.observe(g);});
+}else{
+  [].slice.call(document.querySelectorAll('[data-anim]')).forEach(function(g){g.classList.add('in');});
+}
+
+/* every looping element only runs while its own section is on screen */
+var LIVE='[data-anim],.sweep,.chain';
+if('IntersectionObserver' in window){
+  var liveIO=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){e.target.classList.toggle('live',e.isIntersecting);});
+  },{rootMargin:'100px'});
+  [].slice.call(document.querySelectorAll(LIVE)).forEach(function(el){liveIO.observe(el);});
+}else{
+  [].slice.call(document.querySelectorAll(LIVE)).forEach(function(el){el.classList.add('live');});
+}
+
+/* ---------------------------------------------------------
+   8. the route rail, drawn by page scroll
+   --------------------------------------------------------- */
+var railDraw=document.getElementById('railDraw');
+var railLen=railDraw?railDraw.getTotalLength():0;
+if(railDraw){railDraw.style.strokeDasharray=railLen;railDraw.style.strokeDashoffset=railLen;}
+var lastRail=-1;
+function drawRail(){
+  if(!railDraw)return;
+  var doc=document.documentElement;
+  var max=doc.scrollHeight-window.innerHeight;
+  var p=max>0?clamp(window.scrollY/max,0,1):0;
+  var off=Math.round(railLen*(1-p));
+  if(off!==lastRail){lastRail=off;railDraw.style.strokeDashoffset=off;}
+}
+
+/* ---------------------------------------------------------
+   9. nav state + page scroll listener (one, throttled by rAF)
+   --------------------------------------------------------- */
+var nav=document.getElementById('nav');
+var navSolid=null,pageTick=false;
+function pageScroll(){
+  if(pageTick)return;pageTick=true;
+  requestAnimationFrame(function(){
+    pageTick=false;
+    var solid=window.scrollY>40;
+    if(solid!==navSolid){navSolid=solid;nav.classList.toggle('solid',solid);}
+    drawRail();
+  });
+}
+window.addEventListener('scroll',pageScroll,{passive:true});
+window.addEventListener('resize',function(){lastRail=-1;pageScroll();if(scrubOn)onScroll();},{passive:true});
+
+/* ---------------------------------------------------------
+   10. the interactive moment: find your town
+   --------------------------------------------------------- */
+var TOWNS=[
+  {n:'West Warwick',x:654,y:93,e:'10 to 20 min'},
+  {n:'Warwick',x:868,y:88,e:'15 to 25 min'},
+  {n:'East Greenwich',x:788,y:220,e:'15 to 25 min'},
+  {n:'North Kingstown',x:768,y:303,e:'20 to 30 min'},
+  {n:'Exeter',x:502,y:296,e:'25 to 35 min'},
+  {n:'South Kingstown',x:654,y:522,e:'25 to 40 min',lx:-16,anchor:'end'},
+  {n:'Narragansett',x:800,y:525,e:'30 to 45 min',lx:18,anchor:'start'},
+  {n:'Richmond',x:366,y:438,e:'30 to 45 min'},
+  {n:'Charlestown',x:334,y:642,e:'35 to 50 min'},
+  {n:'Hopkinton',x:144,y:490,e:'35 to 50 min'},
+  {n:'Westerly',x:46,y:653,e:'40 to 55 min'}
+];
+var SVGNS='http://www.w3.org/2000/svg';
+var dotsG=document.getElementById('dots');
+var townsWrap=document.getElementById('towns');
+var routeEl=document.getElementById('route');
+var rName=document.getElementById('rName'),rEta=document.getElementById('rEta');
+var dotEls=[],chipEls=[],current=0;
+
+TOWNS.forEach(function(t,i){
+  var d=document.createElementNS(SVGNS,'circle');
+  d.setAttribute('class','dot');d.setAttribute('cx',t.x);d.setAttribute('cy',t.y);d.setAttribute('r',i===0?0:8);
+  dotsG.appendChild(d);dotEls.push(d);
+
+  var lb=document.createElementNS(SVGNS,'text');
+  lb.setAttribute('class','tag');lb.setAttribute('x',t.x+(t.lx||0));lb.setAttribute('y',t.y+(t.ly||-16));
+  lb.setAttribute('text-anchor',t.anchor||(t.x>860?'end':(t.x<120?'start':'middle')));
+  lb.textContent=i===0?'':t.n.toUpperCase();
+  dotsG.appendChild(lb);
+
+  var b=document.createElement('button');
+  b.className='town';b.type='button';b.textContent=t.n;
+  b.setAttribute('aria-pressed',i===0?'true':'false');
+  b.addEventListener('click',function(){select(i);});
+  townsWrap.appendChild(b);chipEls.push(b);
+
+  d.style.cursor='pointer';
+  d.addEventListener('click',function(){select(i);});
+  t.tag=lb;
+});
+
+function select(i){
+  if(i===current&&routeEl.getAttribute('d'))return;
+  chipEls[current].setAttribute('aria-pressed','false');
+  dotEls[current].classList.remove('on');
+  if(TOWNS[current].tag)TOWNS[current].tag.classList.remove('on');
+  current=i;
+  chipEls[i].setAttribute('aria-pressed','true');
+  dotEls[i].classList.add('on');
+  if(TOWNS[i].tag)TOWNS[i].tag.classList.add('on');
+  rName.textContent=TOWNS[i].n;
+  rEta.textContent=TOWNS[i].e;
+
+  var s=TOWNS[0],t=TOWNS[i];
+  if(i===0){routeEl.setAttribute('d','');return;}
+  var mx=(s.x+t.x)/2+(t.y-s.y)*0.16;
+  var my=(s.y+t.y)/2-(t.x-s.x)*0.16;
+  routeEl.setAttribute('d','M'+s.x+' '+s.y+' Q'+mx.toFixed(0)+' '+my.toFixed(0)+' '+t.x+' '+t.y);
+  var len=routeEl.getTotalLength();
+  routeEl.style.transition='none';
+  routeEl.style.strokeDasharray=len;
+  routeEl.style.strokeDashoffset=len;
+  void routeEl.getBoundingClientRect();
+  routeEl.style.transition='';
+  routeEl.style.strokeDashoffset=0;
+}
+select(0);
+
+/* ---------------------------------------------------------
+   10b. customer reviews: draw the stars, and the show-all toggle
+   --------------------------------------------------------- */
+var STAR='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'+
+  '<path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4 6.2 20.5l1.1-6.5L2.6 9.4l6.5-.9z"/></svg>';
+[].slice.call(document.querySelectorAll('.rev .stars')).forEach(function(s){
+  s.innerHTML=STAR+STAR+STAR+STAR+STAR;
+});
+/* one show-all toggle, used by the reviews and by the photo gallery */
+function wireMore(wrapId,btnId,itemSel,moreLabel,lessLabel){
+  var wrap=document.getElementById(wrapId),btn=document.getElementById(btnId);
+  if(!wrap||!btn)return;
+  var total=wrap.querySelectorAll(itemSel).length;
+  btn.textContent=moreLabel.replace('{n}',total);
+  btn.addEventListener('click',function(){
+    var open=!wrap.classList.toggle('clip');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?lessLabel:moreLabel.replace('{n}',total);
+    if(!open)wrap.scrollIntoView({block:'start'});
+  });
+}
+wireMore('revWrap','revMore','.rev','Read all {n} reviews','Show fewer reviews');
+wireMore('galWrap','galMore','figure','See all {n} photos','Show fewer photos');
+
+/* ---------------------------------------------------------
+   11. FAQ
+   --------------------------------------------------------- */
+[].slice.call(document.querySelectorAll('#faqList .q')).forEach(function(q){
+  var btn=q.querySelector('button');
+  btn.addEventListener('click',function(){
+    var open=q.getAttribute('data-open')==='true';
+    q.setAttribute('data-open',open?'false':'true');
+    btn.setAttribute('aria-expanded',open?'false':'true');
+  });
+});
+
+/* ---------------------------------------------------------
+   12. the form (mailto, so messages land in a real inbox)
+   --------------------------------------------------------- */
+var form=document.getElementById('msg');
+var FIELDS=['f-name','f-phone','f-where','f-what'];
+FIELDS.forEach(function(id){
+  var el=document.getElementById(id);
+  el.addEventListener('input',function(){
+    if(el.value.trim()){
+      el.removeAttribute('aria-invalid');
+      if(!FIELDS.some(function(i){return document.getElementById(i).hasAttribute('aria-invalid');}))
+        form.classList.remove('invalid');
+    }
+  });
+});
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var g=function(id){return document.getElementById(id).value.trim();};
+  var name=g('f-name'),phone=g('f-phone'),where=g('f-where'),what=g('f-what');
+  FIELDS.forEach(function(id){document.getElementById(id).removeAttribute('aria-invalid');});
+  form.classList.remove('invalid');
+  if(!name||!phone||!where||!what){
+    var first=null;
+    [['f-name',name],['f-phone',phone],['f-where',where],['f-what',what]].forEach(function(p){
+      if(!p[1]){var el=document.getElementById(p[0]);el.setAttribute('aria-invalid','true');if(!first)first=el;}
+    });
+    form.classList.add('invalid');
+    if(first)first.focus();
+    return;
+  }
+  var body='Name: '+name+'\nPhone: '+phone+'\nWhere the car is: '+where+'\n\n'+what;
+  window.location.href='mailto:centriautori@gmail.com'
+    +'?subject='+encodeURIComponent('Website message from '+name)
+    +'&body='+encodeURIComponent(body);
+  form.classList.add('done');
+});
+
+/* ---------------------------------------------------------
+   13. pause everything the visitor cannot see
+   --------------------------------------------------------- */
+var pauseStyle=document.createElement('style');
+pauseStyle.textContent='body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused !important}';
+document.head.appendChild(pauseStyle);
+document.addEventListener('visibilitychange',function(){
+  document.body.classList.toggle('paused',document.hidden);
+});
+
+/* ---------------------------------------------------------
+   14. reduced motion, honored live, in both directions
+   --------------------------------------------------------- */
+function pinToFinalStates(){
+  if(railDraw){railDraw.style.strokeDashoffset=0;railDraw.dataset.pinned='1';}
+  [].slice.call(document.querySelectorAll('[data-anim]')).forEach(function(g){g.classList.add('in');});
+  [].slice.call(document.querySelectorAll('.chain')).forEach(function(g){g.classList.add('live');});
+  [].slice.call(document.querySelectorAll('.part')).forEach(function(p){p.style.transitionDelay='';});
+  routeEl.style.strokeDashoffset=0;
+}
+function unpinFinalStates(){
+  if(railDraw&&railDraw.dataset.pinned){delete railDraw.dataset.pinned;lastRail=-1;drawRail();}
+}
+if(reduce.addEventListener){
+  reduce.addEventListener('change',function(e){
+    if(e.matches)pinToFinalStates();
+    else applyHeroMode();
+  });
+}
+
+/* ---------------------------------------------------------
+   15. go
+   --------------------------------------------------------- */
+applyHeroMode();
+if(reduce.matches)pinToFinalStates();
+pageScroll();
+})();
+</script>
 </body>
 </html>
