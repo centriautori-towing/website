@@ -93,11 +93,11 @@ button{font:inherit;color:inherit}
   border-bottom:1px solid transparent}
 .nav.solid{background:rgba(9,13,19,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
 .nav .mark{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;min-width:0}
-.nav .mark img{width:clamp(160px,17vw,232px);height:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6));
+.nav .mark img{width:clamp(182px,20vw,286px);height:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6));
   transition:width .45s var(--e1)}
 /* full size on arrival, a step smaller once the bar goes solid and you are reading */
 .nav.solid{padding-block:10px}
-.nav.solid .mark img{width:clamp(140px,13vw,180px)}
+.nav.solid .mark img{width:clamp(156px,15vw,214px)}
 .nav .hours{font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-secondary);white-space:nowrap}
 .nav .hours b{color:var(--accent);font-weight:500}
 
@@ -114,7 +114,7 @@ button{font:inherit;color:inherit}
 /* small screens: the nav keeps a call button, but a compact one. the big one lives at the bottom. */
 @media (max-width:860px){.nav{padding:12px clamp(14px,4vw,24px);gap:12px}.nav .hours{display:none}}
 @media (max-width:560px){
-  .nav .mark img{width:148px}
+  .nav .mark img{width:168px}
   .nav .btn{padding:11px 14px;min-width:44px}
   .nav .btn .lbl{display:none}
   .nav .btn svg{width:18px;height:18px}
