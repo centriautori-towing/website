@@ -243,17 +243,19 @@ a.nw:hover{border-bottom-color:var(--accent)}
 /* auto top margin pins the tag row to the base of the card, so the two cards'
    different tag counts read as spacing rather than as a hole */
 .svc ul{list-style:none;padding:0;margin:auto 0 0;padding-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+/* every service is highlighted in the accent, at the owner's request */
 .svc li{display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:#DEE7F3;
-  border:1px solid rgba(147,163,188,.34);border-radius:999px;padding:7px 13px;background:var(--panel-2);
-  transition:border-color .3s var(--e1),transform .3s var(--e1),color .3s var(--e1)}
-.svc li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--steel-bright);flex:none}
-.svc li:hover{border-color:var(--steel-bright);transform:translateY(-2px)}
-/* the one the business wants seen first: outlined in the accent, never filled,
-   so it reads as emphasis and not as another call button */
-.svc li.hot{color:var(--accent);border-color:var(--accent);background:rgba(246,183,35,.10);font-weight:500}
-.svc li.hot::before{background:var(--accent);box-shadow:0 0 8px var(--accent)}
-#services.live .svc li.hot::before{animation:emberglow 5s var(--e2) infinite alternate}
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--accent);
+  border:1px solid rgba(246,183,35,.42);border-radius:999px;padding:7px 13px;
+  background:rgba(246,183,35,.08);
+  transition:border-color .3s var(--e1),transform .3s var(--e1),background .3s var(--e1)}
+.svc li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+.svc li:hover{border-color:var(--accent);background:rgba(246,183,35,.17);transform:translateY(-2px)}
+/* the revenue priority still has to lead a row where everything is lit up,
+   so it is the only one filled solid */
+.svc li.hot{color:#0A0F16;background:var(--accent);border-color:var(--accent);font-weight:500}
+.svc li.hot::before{background:rgba(10,15,22,.55)}
+.svc li.hot:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
 @media (max-width:900px){.svc{grid-template-columns:1fr}}
 
 /* coverage : the interactive moment. deliberately a different skeleton to its neighbours:
