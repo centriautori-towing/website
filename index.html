@@ -296,6 +296,9 @@ a.nw:hover{border-bottom-color:var(--accent)}
 .readout .eta{font-family:var(--mono);font-size:clamp(1.5rem,2.4vw,2rem);color:var(--accent);margin-top:18px;font-weight:500}
 .readout .etalbl{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin-top:4px}
 .readout .note{color:var(--text-secondary);font-size:.92rem;margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
+/* fine print under the map itself, where the estimates are actually being read */
+.mapnote{margin-top:14px;font-size:.82rem;line-height:1.6;color:#7E8DA4;max-width:70ch}
+.mapnote b{color:#9DAABF;font-weight:500}
 .readout .btn{margin-top:22px;width:100%}
 @media (max-width:960px){.cov{grid-template-columns:1fr}.readout{position:static}}
 
@@ -628,6 +631,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
           <text class="tag" x="654" y="68" text-anchor="middle" fill="#F6B723">THE YARD</text>
         </svg>
       </div>
+      <p class="mapnote"><b>Please note:</b> the times shown here are rough estimates for planning only, measured from our yard in West Warwick to the middle of each town. They are not a guaranteed arrival time. Real traffic, weather, road works, the exact spot you have stopped and how many calls we are already running will all change them. Call us and we will give you an honest window for where you actually are.</p>
     </div>
 
     <aside class="readout part" aria-live="polite">
@@ -635,7 +639,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
       <div class="name" id="rName">West Warwick</div>
       <div class="eta" id="rEta">10 to 20 min</div>
       <div class="etalbl">Typical arrival</div>
-      <p class="note">Windows are typical, not promises. Weather and traffic are real. We tell you the truth on the phone.</p>
+      <p class="note">These times are estimates, not promises. Real traffic, weather, road works and how busy the trucks are on the night all change them. You get an honest window for your actual location when you call.</p>
       <a class="btn btn-primary" href="tel:+14014209069">Call 401-420-9069</a>
     </aside>
   </div>
