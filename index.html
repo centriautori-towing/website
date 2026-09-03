@@ -331,7 +331,26 @@ a.nw:hover{border-bottom-color:var(--accent)}
   font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary)}
 .striphint span{width:26px;height:1px;background:var(--accent);opacity:.7}
 
-/* real work gallery: an even wall of real jobs */
+/* "where am I" helper. No backend and nothing to sign up for: the phone works
+   out the position, we show it big enough to read down the phone, and offer
+   copy, a map link and email. No SMS or WhatsApp button, because neither
+   channel is one this business can actually receive on. */
+.locate{margin-top:clamp(26px,3.4vw,44px);border:1px solid var(--line);border-radius:20px;
+  background:linear-gradient(180deg,var(--panel),rgba(18,28,42,.6));
+  padding:clamp(24px,3vw,38px)}
+.locate h3{font-size:clamp(1.15rem,1.7vw,1.45rem)}
+.locate .locmain p{color:var(--text-secondary);margin-top:12px;max-width:62ch}
+.locate .btn{margin-top:20px}
+.locfine{font-size:.82rem;color:#7E8DA4;margin-top:14px !important}
+.locout{margin-top:clamp(22px,2.6vw,30px);padding-top:clamp(20px,2.4vw,26px);border-top:1px solid var(--line)}
+.loclabel{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.loccoords{font-family:var(--mono);font-size:clamp(1.25rem,2.6vw,1.9rem);color:var(--text-primary);
+  margin-top:10px;letter-spacing:.02em;word-break:break-word}
+.locacc{font-size:.88rem;color:var(--text-secondary);margin-top:8px}
+.locrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.locrow .btn{margin-top:0}
+.locerr{margin-top:18px;color:var(--warn);font-size:.92rem;max-width:60ch}
+.locate.done .locmain .btn{display:none}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
   gap:clamp(10px,1.3vw,16px);margin-top:clamp(30px,4vw,48px)}
 .gal figure{margin:0;position:relative;border-radius:14px;overflow:hidden;
@@ -642,6 +661,29 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
       <p class="note">These times are estimates, not promises. Real traffic, weather, road works and how busy the trucks are on the night all change them. You get an honest window for your actual location when you call.</p>
       <a class="btn btn-primary" href="tel:+14014209069">Call 401-420-9069</a>
     </aside>
+  </div>
+
+  <div class="locate part" id="locate">
+    <div class="locmain">
+      <h3>Not sure where you are?</h3>
+      <p>If you cannot see a road sign or a house number, tap this. Your phone works out exactly where you are standing, then you read it to us on the call.</p>
+      <button class="btn btn-primary" type="button" id="locBtn">Find my location</button>
+      <p class="locfine">Your phone will ask permission first. Nothing is sent anywhere until you choose to.</p>
+    </div>
+
+    <div class="locout" id="locOut" hidden aria-live="polite">
+      <div class="loclabel">You are here</div>
+      <div class="loccoords" id="locCoords"></div>
+      <div class="locacc" id="locAcc"></div>
+      <div class="locrow">
+        <a class="btn btn-primary" href="tel:+14014209069">Call and read this out</a>
+        <button class="btn btn-ghost" type="button" id="locCopy">Copy it</button>
+        <a class="btn btn-ghost" id="locMap" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+        <a class="btn btn-ghost" id="locMail">Email it to us</a>
+      </div>
+    </div>
+
+    <p class="locerr" id="locErr" hidden role="status"></p>
   </div>
 </section>
 
@@ -1242,6 +1284,83 @@ if(riClock){
   setInterval(function(){if(!document.hidden)paintClock();},15000);
   document.addEventListener('visibilitychange',function(){if(!document.hidden)paintClock();});
 }
+
+/* ---------------------------------------------------------
+   10d. "where am I": the phone finds the position, we show it big enough
+   to read down the phone. Nothing leaves the device unless they choose.
+   --------------------------------------------------------- */
+(function(){
+  var box=document.getElementById('locate');
+  if(!box)return;
+  var btn=document.getElementById('locBtn'),
+      out=document.getElementById('locOut'),
+      err=document.getElementById('locErr'),
+      elCoords=document.getElementById('locCoords'),
+      elAcc=document.getElementById('locAcc'),
+      elMap=document.getElementById('locMap'),
+      elMail=document.getElementById('locMail'),
+      copyBtn=document.getElementById('locCopy');
+
+  function fail(msg){
+    err.textContent=msg;err.hidden=false;
+    btn.disabled=false;btn.textContent='Try again';
+  }
+
+  btn.addEventListener('click',function(){
+    err.hidden=true;
+    if(!navigator.geolocation){
+      fail('This browser cannot work out your location. Call us on 401-420-9069 and describe what you can see: a road number, a junction, a shop, anything.');
+      return;
+    }
+    btn.disabled=true;btn.textContent='Finding you...';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var la=pos.coords.latitude, ln=pos.coords.longitude;
+      var acc=Math.round(pos.coords.accuracy);
+      var lat=la.toFixed(5), lng=ln.toFixed(5);
+      var maps='https://www.google.com/maps?q='+lat+','+lng;
+
+      elCoords.textContent=lat+', '+lng;
+      var feet=Math.round(acc*3.28084);
+      elAcc.textContent='Accurate to about '+acc+' m ('+feet+' ft).'+
+        (acc>150?' That is a rough fix. If you are indoors or on a laptop, try again on your phone outside for a much closer one.':'');
+      elMap.href=maps;
+      elMail.href='mailto:centriautori@gmail.com'
+        +'?subject='+encodeURIComponent('My location for Centri Auto')
+        +'&body='+encodeURIComponent('I need help at this location:\n\n'+lat+', '+lng+'\n'+maps+'\n\nAccurate to about '+acc+' metres.\n\nMy name:\nMy phone:\nWhat is wrong:');
+
+      out.hidden=false;
+      box.classList.add('done');
+      btn.disabled=false;btn.textContent='Update my location';
+      out.setAttribute('data-share',lat+', '+lng+'  '+maps);
+    },function(e){
+      btn.disabled=false;btn.textContent='Try again';
+      if(e.code===1){
+        fail('Your phone blocked the location request. You can allow it in your browser settings, or just call us on 401-420-9069 and describe what you can see.');
+      }else if(e.code===3){
+        fail('That took too long, which usually means a weak signal. Try once more, or call us on 401-420-9069.');
+      }else{
+        fail('Your phone could not get a fix, which happens under cover or in a garage. Try stepping outside, or call us on 401-420-9069.');
+      }
+    },{enableHighAccuracy:true,timeout:15000,maximumAge:0});
+  });
+
+  copyBtn.addEventListener('click',function(){
+    var text=out.getAttribute('data-share')||'';
+    var done=function(){copyBtn.textContent='Copied';
+      setTimeout(function(){copyBtn.textContent='Copy it';},2200);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done,function(){legacy();});
+    }else legacy();
+    function legacy(){
+      var t=document.createElement('textarea');
+      t.value=text;t.setAttribute('readonly','');
+      t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.select();
+      try{document.execCommand('copy');done();}catch(e){copyBtn.textContent='Copy failed';}
+      document.body.removeChild(t);
+    }
+  });
+})();
 
 /* ---------------------------------------------------------
    11. FAQ
