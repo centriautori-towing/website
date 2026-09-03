@@ -269,6 +269,20 @@ a.nw:hover{border-bottom-color:var(--accent)}
 .covhead{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,3.4vw,56px);align-items:baseline;
   padding-bottom:clamp(26px,3.4vw,44px);border-bottom:1px solid var(--line)}
 .covhead h2{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+/* draws the eye without flashing: the key word in the accent, a line that
+   draws itself under it on arrival, and a slow breath of glow. The pulse runs
+   at about 0.3Hz, nowhere near anything that could trouble a photosensitive
+   visitor, and reduced motion gets the finished state with no movement at all */
+.findhead .mark{position:relative;color:var(--accent);white-space:nowrap}
+.findhead .uline{position:absolute;left:-3%;bottom:-.20em;width:106%;height:.26em;overflow:visible}
+.findhead .uline path{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round;
+  stroke-dasharray:320;stroke-dashoffset:320;
+  filter:drop-shadow(0 0 8px rgba(246,183,35,.55));
+  transition:stroke-dashoffset 1.15s var(--e1) .3s}
+#coverage.in .findhead .uline path{stroke-dashoffset:0}
+#coverage.live .findhead .mark{animation:townglow 3.4s var(--e2) infinite alternate}
+@keyframes townglow{from{text-shadow:0 0 0 rgba(246,183,35,0)}
+  to{text-shadow:0 0 30px rgba(246,183,35,.6)}}
 .covhead .lede{margin-top:0}
 @media (max-width:900px){.covhead{grid-template-columns:1fr}}
 .cov{display:grid;grid-template-columns:1fr .82fr;gap:clamp(24px,3.6vw,52px);align-items:start;margin-top:clamp(30px,4vw,46px)}
@@ -634,7 +648,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
 <!-- ============================ COVERAGE (the interactive moment) ============================ -->
 <section class="blk" id="coverage" data-anim>
   <div class="covhead">
-    <h2 class="big part">Find your town.</h2>
+    <h2 class="big part findhead">Find your <span class="mark">town<svg class="uline" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M5 9 C 70 2, 150 13, 295 6"/></svg></span>.</h2>
     <div class="part">
       <p class="lede">We run these roads every night. Pick yours and see what a normal call looks like.</p>
       <div class="towns" id="towns" role="group" aria-label="Choose your town"></div>
