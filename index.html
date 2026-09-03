@@ -364,6 +364,10 @@ a.nw:hover{border-bottom-color:var(--accent)}
 .gal figure:hover img{transform:scale(1.06)}
 .gal.clip figure:nth-child(n+9){display:none}
 .galmore{display:flex;margin:clamp(16px,2vw,24px) auto 0}
+/* small print under the service cards, for a condition worth saying out loud.
+   Kept out of the cards themselves so it does not unbalance their heights. */
+.svcnote{margin-top:clamp(20px,2.4vw,28px);font-size:.82rem;line-height:1.6;color:#7E8DA4;max-width:70ch}
+.svcnote b{color:#9DAABF;font-weight:500}
 
 /* customer reviews. centred head and a masonry flow, so it shares no skeleton with its neighbours */
 #reviews .revhead{text-align:center;max-width:60ch;margin-inline:auto}
@@ -621,6 +625,8 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
       </div>
     </article>
   </div>
+
+  <p class="svcnote"><b>On flat tires:</b> we fit the spare that came with your car, so you do need a usable one on board. If there is no spare, or the spare is flat as well, we tow you instead.</p>
 </section>
 
 <div class="sweep" aria-hidden="true"></div>
