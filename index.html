@@ -475,7 +475,8 @@ form p.hint{color:var(--text-secondary);font-size:.93rem;margin-top:10px}
 .fld textarea{min-height:104px;resize:vertical}
 .fld input[aria-invalid="true"],.fld textarea[aria-invalid="true"]{border-color:var(--warn)}
 .formerr{display:none;margin-top:16px;color:var(--warn);font-size:.9rem;font-family:var(--mono);letter-spacing:.02em}
-form.invalid .formerr{display:block}
+form.invalid #formerr{display:block}
+form.failed #formfail{display:block}
 form .btn{margin-top:22px;width:100%}
 .sent{display:none;margin-top:18px;border:1px solid var(--accent-muted);background:rgba(246,183,35,.07);
   border-radius:12px;padding:16px;color:#E8EEF7;font-size:.95rem}
@@ -947,8 +948,10 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:r
       <div class="fld"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
       <div class="fld"><label for="f-where">Where the car is</label><input id="f-where" name="where" type="text" required></div>
       <div class="fld"><label for="f-what">What is going on</label><textarea id="f-what" name="what" placeholder="Won't start, needs to get to a shop in Wakefield" required></textarea></div>
-      <button class="btn btn-primary" type="submit">Send it</button>
+      <input type="checkbox" name="botcheck" id="f-bot" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <button class="btn btn-primary" type="submit" id="f-send">Send it</button>
       <p class="formerr" id="formerr" role="status">Fill in the highlighted boxes and we will have everything we need.</p>
+      <p class="formerr" id="formfail" role="status">That did not go through. Please call <a href="tel:+14014209069">401-420-9069</a> and we will take it from there.</p>
       <div class="sent" id="sent">Got it. We will call you back at the number you gave us. If this turns urgent, call <span class="nw">401-420-9069</span> and we will move.</div>
     </form>
   </div>
@@ -1400,8 +1403,12 @@ if(riClock){
 });
 
 /* ---------------------------------------------------------
-   12. the form (mailto, so messages land in a real inbox)
+   12. the form: emailed via Web3Forms, plus a WhatsApp alert
+       via CallMeBot. Both are sent straight from the page.
    --------------------------------------------------------- */
+var WEB3FORMS_KEY='dad46f90-5667-47ac-b6a8-2ca36cab767c';
+var CALLMEBOT_PHONE='639205902024';
+var CALLMEBOT_KEY='5740976';
 var form=document.getElementById('msg');
 var FIELDS=['f-name','f-phone','f-where','f-what'];
 FIELDS.forEach(function(id){
@@ -1429,11 +1436,37 @@ form.addEventListener('submit',function(e){
     if(first)first.focus();
     return;
   }
-  var body='Name: '+name+'\nPhone: '+phone+'\nWhere the car is: '+where+'\n\n'+what;
-  window.location.href='mailto:centriautori@gmail.com'
-    +'?subject='+encodeURIComponent('Website message from '+name)
-    +'&body='+encodeURIComponent(body);
-  form.classList.add('done');
+  if(document.getElementById('f-bot').checked)return; // spam bot
+  var btn=document.getElementById('f-send');
+  btn.disabled=true;btn.textContent='Sending...';
+  form.classList.remove('failed');
+
+  // WhatsApp alert (fire and forget; the email below is the record)
+  if(CALLMEBOT_KEY.indexOf('PASTE_')!==0){
+    var wa='*New website message*\nName: '+name+'\nPhone: '+phone+'\nWhere: '+where+'\n'+what;
+    fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(CALLMEBOT_PHONE)
+      +'&text='+encodeURIComponent(wa)+'&apikey='+encodeURIComponent(CALLMEBOT_KEY),
+      {mode:'no-cors'}).catch(function(){});
+  }
+
+  // Email copy via Web3Forms; success or failure decides what the visitor sees
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      access_key:WEB3FORMS_KEY,
+      subject:'Website message from '+name,
+      from_name:'Centri Auto website',
+      name:name,phone:phone,'Where the car is':where,message:what
+    })
+  }).then(function(r){return r.json();}).then(function(d){
+    if(!d.success)throw new Error(d.message||'failed');
+    form.classList.add('done');
+    btn.style.display='none';
+  }).catch(function(){
+    form.classList.add('failed');
+    btn.disabled=false;btn.textContent='Send it';
+  });
 });
 
 /* ---------------------------------------------------------
