@@ -1407,8 +1407,12 @@ if(riClock){
        via CallMeBot. Both are sent straight from the page.
    --------------------------------------------------------- */
 var WEB3FORMS_KEY='dad46f90-5667-47ac-b6a8-2ca36cab767c';
-var CALLMEBOT_PHONE='639205902024';
-var CALLMEBOT_KEY='5740976';
+// WhatsApp alerts via CallMeBot: one line per person [name, phone digits, apikey]
+var CALLMEBOT=[
+  ['Owner','639205902024','5740976'],
+  ['Chara Mae Cortel','639454017077','9602028'],
+  ['Lea Rina Peñaflor','639507316105','4274947']
+];
 var form=document.getElementById('msg');
 var FIELDS=['f-name','f-phone','f-where','f-what'];
 FIELDS.forEach(function(id){
@@ -1442,12 +1446,12 @@ form.addEventListener('submit',function(e){
   form.classList.remove('failed');
 
   // WhatsApp alert (fire and forget; the email below is the record)
-  if(CALLMEBOT_KEY.indexOf('PASTE_')!==0){
-    var wa='*New website message*\nName: '+name+'\nPhone: '+phone+'\nWhere: '+where+'\n'+what;
-    fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(CALLMEBOT_PHONE)
-      +'&text='+encodeURIComponent(wa)+'&apikey='+encodeURIComponent(CALLMEBOT_KEY),
+  var wa='*New website message*\nName: '+name+'\nPhone: '+phone+'\nWhere: '+where+'\n'+what;
+  CALLMEBOT.forEach(function(p){
+    fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(p[1])
+      +'&text='+encodeURIComponent(wa)+'&apikey='+encodeURIComponent(p[2]),
       {mode:'no-cors'}).catch(function(){});
-  }
+  });
 
   // Email copy via Web3Forms; success or failure decides what the visitor sees
   fetch('https://api.web3forms.com/submit',{
